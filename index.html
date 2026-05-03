@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit 4 Management Quiz</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-slate-50 min-h-screen">
+    <div id="app" class="max-w-md mx-auto min-h-screen flex flex-col p-4">
+        <!-- Start Screen -->
+        <div id="start-screen" class="flex-1 flex flex-col justify-center items-center text-center">
+            <div class="w-24 h-24 bg-rose-100 rounded-3xl flex items-center justify-center mb-6">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 text-rose-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 002-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" /></svg>
+            </div>
+            <h1 class="text-3xl font-bold text-slate-800 mb-2">Unit 4 Quiz</h1>
+            <p class="text-slate-500 mb-8 font-medium italic">Project, HR & Agile Management (150 MCQs)</p>
+            <button onclick="startQuiz()" class="w-full bg-rose-600 text-white py-4 rounded-2xl font-bold text-lg shadow-lg hover:bg-rose-700 mb-4 transition-colors">Start Solving</button>
+            <a href="index.html" class="text-rose-600 font-bold underline hover:text-rose-800 transition-colors">← Go back</a>
+        </div>
+
+        <!-- Quiz Screen -->
+        <div id="quiz-screen" class="hidden flex-1 flex flex-col">
+            <div class="mb-6">
+                <div class="flex justify-between items-center mb-2">
+                    <span id="progress-text" class="text-xs font-bold text-slate-400 uppercase tracking-widest">Question 1/150</span>
+                    <span id="score-text" class="bg-rose-50 text-rose-600 px-3 py-1 rounded-full text-xs font-bold">Score: 0</span>
+                </div>
+                <div class="h-2 w-full bg-slate-200 rounded-full overflow-hidden"><div id="progress-bar" class="h-full bg-rose-500 transition-all duration-300" style="width: 2%"></div></div>
+            </div>
+            <h2 id="question-text" class="text-xl font-bold text-slate-800 mb-6 leading-snug"></h2>
+            <div id="options-container" class="space-y-3 mb-6"></div>
+            <div id="explanation-box" class="hidden mb-6 p-4 bg-slate-900 rounded-2xl text-slate-300 text-sm italic border-l-4 border-rose-500"></div>
+            <button id="next-btn" onclick="nextQuestion()" class="hidden w-full bg-slate-800 text-white py-4 rounded-2xl font-bold text-lg shadow-md mt-auto hover:bg-slate-700 transition-colors">Next Question</button>
+        </div>
+
+        <!-- Result Screen -->
+        <div id="result-screen" class="hidden flex-1 flex flex-col justify-center items-center text-center">
+            <h2 class="text-3xl font-black text-slate-800 mb-8">Results</h2>
+            <div class="bg-white p-8 rounded-3xl border border-slate-200 w-full mb-8">
+                <p id="final-score" class="text-6xl font-black text-rose-600 mb-2">0</p>
+                <p id="final-total" class="text-xs font-bold text-slate-400 uppercase">Correct out of 150</p>
+            </div>
+            <button onclick="location.reload()" class="w-full bg-slate-900 text-white py-4 rounded-2xl font-bold mb-4 hover:bg-slate-800 transition-colors">Retry Quiz</button>
+            <a href="index.html" class="w-full bg-rose-600 text-white py-4 rounded-2xl font-bold text-center hover:bg-rose-700 transition-colors">← Home</a>
+        </div>
+    </div>
+
+    <script>
+        // The correct answer is at index 0 in the source. JavaScript shuffles them randomly at runtime!
+        const questions = [
+            // 1-30: Human Resource Management & Psychometric Tests
+            { q: "What does HRM stand for?", options: ["Human Resource Management", "Human Relations Measurement", "Human Rights Management", "Higher Resource Maintenance"], a: 0, e: "HRM focuses on recruiting, managing, and directing the people who work in an organization." },
+            { q: "The primary purpose of Human Resource Management is to:", options: ["Maximize employee performance in service of an employer's strategic objectives", "Only handle payroll and salaries", "Fix computer networks and IT issues", "Market the company's products"], a: 0, e: "HRM aligns the workforce's skills and motivation with the company's ultimate business goals." },
+            { q: "Which process involves actively attracting a pool of qualified candidates for a job opening?", options: ["Recruitment", "Selection", "Training", "Appraisal"], a: 0, e: "Recruitment is the positive process of generating a pool of capable applicants." },
+            { q: "How is 'Selection' different from 'Recruitment'?", options: ["Selection is a negative process of eliminating unsuitable candidates to choose the best one", "Selection comes before recruitment", "Selection only involves internal employees", "There is no difference"], a: 0, e: "While recruitment attracts many, selection filters them out, making it a 'negative' process." },
+            { q: "Promoting an existing employee to a higher position is an example of:", options: ["Internal Recruitment", "External Recruitment", "Off-the-job Training", "Direct Selection"], a: 0, e: "Internal recruitment fills vacancies from within the existing workforce." },
+            { q: "Which of the following is an 'External' source of recruitment?", options: ["Campus interviews and employment agencies", "Promotions", "Transfers", "Demotions"], a: 0, e: "Campus placements bring in fresh talent from outside the organization." },
+            { q: "What is the primary purpose of an 'Aptitude Test' during the selection process?", options: ["To measure a candidate's potential or capacity to learn new skills", "To measure physical strength", "To check their medical history", "To test their current typing speed"], a: 0, e: "Aptitude tests predict how well someone can learn a new job." },
+            { q: "Which test is used to evaluate a candidate's traits, emotional stability, and behavioral style?", options: ["Personality / Psychometric Test", "Trade Test", "Dexterity Test", "Knowledge Test"], a: 0, e: "Psychometric personality tests see if a candidate is an introvert/extrovert and how they handle stress." },
+            { q: "What are 'Psychometric Tests' primarily designed to measure?", options: ["Mental capabilities, cognitive abilities, and behavioral style", "Physical endurance and stamina", "Past employment history", "Financial literacy"], a: 0, e: "They provide an objective measurement of the mind and personality." },
+            { q: "A 'Trade Test' or 'Proficiency Test' aims to measure:", options: ["The skills and knowledge the candidate already possesses", "Their hidden potential to learn", "Their emotional stability", "Their honesty"], a: 0, e: "If you hire a programmer, a trade test asks them to write actual code to prove they can do it." },
+            { q: "What is 'On-the-Job Training' (OJT)?", options: ["Training an employee at the actual workplace while they perform the job", "Sending an employee to a university", "Training through virtual reality only", "Reading a manual at home"], a: 0, e: "OJT involves 'learning by doing' directly on the shop floor or desk." },
+            { q: "Which of the following is an example of Off-the-Job training?", options: ["Classroom lectures and seminars", "Apprenticeship", "Job rotation", "Coaching by a supervisor"], a: 0, e: "Off-the-job training takes the employee away from the actual work environment to learn." },
+            { q: "What is 'Performance Appraisal'?", options: ["The systematic evaluation of an employee's job performance and contribution to the organization", "The process of firing an employee", "The calculation of total factory output", "The process of hiring a manager"], a: 0, e: "It is used for promotions, salary hikes, and identifying training needs." },
+            { q: "Which performance appraisal method involves gathering feedback from an employee's subordinates, peers, and supervisors?", options: ["360-Degree Feedback", "Ranking Method", "Graphic Rating Scale", "Critical Incident Method"], a: 0, e: "360-degree feedback provides a comprehensive view from all directions around the employee." },
+            { q: "What does 'Job Analysis' involve?", options: ["Systematically collecting detailed information about the duties, responsibilities, and skills required for a specific job", "Analyzing the factory's financial budget", "Checking the quality of a product", "Evaluating a competitor's product"], a: 0, e: "Job analysis creates the foundation for job descriptions and job specifications." },
+            { q: "A 'Job Description' is a written statement outlining:", options: ["The roles, duties, tasks, and responsibilities of the job itself", "The personal qualifications required of the candidate", "The company's annual profit", "The exact salary of the employee"], a: 0, e: "It describes *what* the job is." },
+            { q: "A 'Job Specification' outlines:", options: ["The human qualities, education, and experience required to perform the job", "The physical location of the job", "The working hours", "The daily tasks to be done"], a: 0, e: "It describes *who* is needed to do the job." },
+            { q: "What is 'Induction' or 'Orientation' in HR?", options: ["The process of introducing a new employee to the organization, its policies, and their coworkers", "The final exit interview", "The process of calculating wages", "A physical fitness test"], a: 0, e: "Induction helps new hires settle in comfortably and quickly." },
+            { q: "What is 'Job Rotation'?", options: ["Moving an employee through different jobs or departments to broaden their skills and reduce boredom", "Firing an employee and hiring a new one", "Making employees work night shifts", "Reducing an employee's workload"], a: 0, e: "It creates a multi-skilled workforce capable of handling various tasks." },
+            { q: "Which function of HRM deals with ensuring a safe, healthy, and happy workplace?", options: ["Employee Welfare and Health", "Recruitment", "Performance Appraisal", "Job Analysis"], a: 0, e: "Welfare ensures workers have canteens, medical facilities, and safe environments." },
+            { q: "What is the primary purpose of an 'Exit Interview'?", options: ["To understand why an employee is leaving the organization and gather feedback to improve retention", "To force the employee to stay", "To give them their final paycheck", "To threaten the employee"], a: 0, e: "Exit interviews provide honest insights into company problems." },
+            { q: "What is 'Compensation Management' in HR?", options: ["Designing and administering equitable salaries, wages, and benefits for employees", "Managing customer complaints", "Controlling factory machinery", "Managing the company's stock price"], a: 0, e: "It ensures employees are paid fairly to keep them motivated." },
+            { q: "The 'Halo Effect' is a common error in Performance Appraisal. What does it mean?", options: ["Rating an employee highly on all traits based on just one positive trait", "Rating everyone as average", "Judging an employee based on a single mistake", "Rating employees based on their age"], a: 0, e: "If a worker is very punctual, a manager might mistakenly rate them high on technical skills too." },
+            { q: "What does 'Fringe Benefits' or 'Perks' refer to?", options: ["Extra benefits supplementing an employee's salary, like health insurance or a company car", "The base monthly salary", "Overtime wages", "Money deducted for taxes"], a: 0, e: "Perks help attract and retain top talent beyond just the base salary." },
+            { q: "Which act is most commonly associated with HR compliance in Indian manufacturing?", options: ["The Factories Act, 1948", "The IT Act, 2000", "The Consumer Protection Act", "The Companies Act"], a: 0, e: "The Factories Act ensures safety, health, and welfare of workers in factories." },
+            { q: "What does an HR 'Grievance Handling' mechanism do?", options: ["Provides a formal process for employees to raise complaints and have them resolved fairly", "Fires complaining employees", "Manages customer returns", "Ignores employee issues"], a: 0, e: "A strong grievance system maintains industrial peace and morale." },
+            { q: "Which of the following is considered an intangible HR asset?", options: ["Employee morale and corporate culture", "Office furniture", "Factory machinery", "Company vehicles"], a: 0, e: "Morale cannot be touched, but it is one of the company's most valuable assets." },
+            { q: "What does 'Workforce Planning' involve?", options: ["Forecasting the future demand and supply of employees to ensure the company has the right number of people", "Planning the annual office party", "Deciding which products to manufacture", "Calculating the monthly electricity bill"], a: 0, e: "It ensures the company is neither overstaffed nor understaffed." },
+            { q: "A structured questionnaire that asks candidates how they would react in specific hypothetical situations is called a:", options: ["Situational Judgment Test", "Physical Endurance Test", "Medical Test", "Financial Audit"], a: 0, e: "These tests assess decision-making and problem-solving skills in real-world scenarios." },
+            { q: "Why do companies use Psychometric Tests?", options: ["Because they provide objective, standardized data that removes human bias from the hiring process", "Because they are required by the government", "To test the candidate's typing speed", "To check their social media accounts"], a: 0, e: "Standardized tests prevent interviewers from hiring based purely on 'gut feeling'." },
+
+            // 31-75: Project Management, PERT, CPM, Gantt Charts
+            { q: "What is a 'Project'?", options: ["A temporary endeavor undertaken to create a unique product, service, or result", "A continuous, repetitive manufacturing process", "A daily routine task", "A permanent company department"], a: 0, e: "Projects have a definitive start and end date, unlike daily operations." },
+            { q: "Which of the following represents the correct Project Life Cycle phases?", options: ["Initiation -> Planning -> Execution -> Monitoring -> Closure", "Execution -> Planning -> Closure -> Initiation -> Monitoring", "Planning -> Closure -> Execution -> Initiation", "Initiation -> Closure -> Execution -> Planning"], a: 0, e: "A project must be initiated, planned, executed, monitored, and finally closed." },
+            { q: "Who introduced the Gantt Chart?", options: ["Henry L. Gantt", "F.W. Taylor", "Henry Fayol", "Peter Drucker"], a: 0, e: "Henry Gantt developed this visual scheduling tool in the 1910s." },
+            { q: "What is a 'Gantt Chart' primarily used for?", options: ["Visualizing a project schedule by displaying tasks against a timeline using horizontal bars", "Calculating the project's financial budget", "Designing the product's blueprint", "Evaluating employee performance"], a: 0, e: "The X-axis represents time, and the Y-axis lists tasks, with bars showing duration." },
+            { q: "What is a major limitation of a basic Gantt Chart?", options: ["It does not clearly show the dependencies and interrelationships between complex activities", "It is too expensive to draw", "It only works for one-day projects", "It cannot show time durations"], a: 0, e: "While good for simple schedules, network diagrams (PERT/CPM) are needed to show complex task dependencies." },
+            { q: "What does 'PERT' stand for?", options: ["Program Evaluation and Review Technique", "Project Estimation and Rating Tool", "Process Evaluation and Reporting Task", "Program Execution and Review Timeline"], a: 0, e: "PERT was developed by the US Navy in the 1950s for the Polaris missile project." },
+            { q: "What does 'CPM' stand for?", options: ["Critical Path Method", "Critical Process Management", "Central Path Module", "Complex Project Method"], a: 0, e: "CPM was developed by DuPont for complex chemical plant maintenance projects." },
+            { q: "The primary difference between PERT and CPM is that:", options: ["PERT is probabilistic (deals with uncertainty in time), while CPM is deterministic (assumes exact time known)", "PERT is used for construction, CPM is used for R&D", "PERT uses bar charts, CPM uses pie charts", "There is absolutely no difference"], a: 0, e: "PERT uses 3 time estimates because R&D projects have uncertain durations. CPM uses 1 time estimate." },
+            { q: "Which technique is highly 'Event-oriented'?", options: ["PERT", "CPM", "Gantt Chart", "Six Sigma"], a: 0, e: "PERT focuses on the start and completion of events (nodes)." },
+            { q: "Which technique is highly 'Activity-oriented'?", options: ["CPM", "PERT", "SWOT Analysis", "Maslow's Theory"], a: 0, e: "CPM focuses strictly on the activities (arrows) and optimizing their cost-time trade-offs." },
+            { q: "In a network diagram, what does an 'Activity' represent?", options: ["A specific task that consumes time and resources, represented by an arrow", "A point in time marking the start or end of a task", "A mathematical equation", "A project manager"], a: 0, e: "Activities are the actual work being done." },
+            { q: "In a network diagram, what does an 'Event' (or Node) represent?", options: ["A specific point in time marking the beginning or end of an activity, consuming no time or resources", "The actual work being done", "A delay in the project", "A physical material"], a: 0, e: "Events are usually drawn as circles (nodes) connecting the arrows." },
+            { q: "What is a 'Dummy Activity' in network analysis?", options: ["An artificial activity used only to show logical dependency between events, consuming zero time and zero resources", "An activity done by unskilled workers", "An activity that failed", "A physical break in the project"], a: 0, e: "Dummy activities are drawn as dashed arrows purely to maintain network logic." },
+            { q: "In PERT, the 'Optimistic Time' (To) is:", options: ["The shortest possible time to complete an activity if everything goes perfectly", "The average time it takes", "The absolute longest time it could take", "The time it takes to crash the project"], a: 0, e: "Optimistic time assumes zero delays or issues." },
+            { q: "In PERT, the 'Pessimistic Time' (Tp) is:", options: ["The longest possible time an activity might take if everything goes wrong (excluding natural disasters)", "The shortest possible time", "The most normal, expected time", "The time a dummy activity takes"], a: 0, e: "Pessimistic time accounts for major setbacks and delays." },
+            { q: "In PERT, the 'Most Likely Time' (Tm) is:", options: ["The most probable time required to complete the activity under normal conditions", "The absolute fastest time", "The absolute slowest time", "The exact time a competitor took"], a: 0, e: "This is the time you would normally expect the job to take." },
+            { q: "What is the formula to calculate the 'Expected Time' (Te) in PERT?", options: ["Te = (Optimistic + 4(Most Likely) + Pessimistic) / 6", "Te = (Optimistic + Pessimistic) / 2", "Te = (Most Likely + Pessimistic) / 3", "Te = (Optimistic + Most Likely + Pessimistic) / 3"], a: 0, e: "This weighted average heavily weights the 'most likely' time while factoring in the extremes." },
+            { q: "What is the 'Critical Path' in a project network?", options: ["The longest path through the network, determining the shortest possible time the entire project can be completed", "The shortest path through the network", "The path with the most dummy activities", "The path that uses the least money"], a: 0, e: "Because it's the longest sequence of tasks, any delay on the critical path delays the entire project." },
+            { q: "What is the value of 'Slack' or 'Float' on the Critical Path?", options: ["Zero", "Maximum", "Infinite", "Negative one"], a: 0, e: "Critical activities have zero slack; they cannot be delayed without delaying the final deadline." },
+            { q: "What does 'Slack' or 'Float' mean in project management?", options: ["The amount of time an activity can be delayed without delaying the overall project completion date", "The time workers spend taking breaks", "The amount of money saved", "The time taken by a dummy activity"], a: 0, e: "Non-critical paths have float, giving managers flexibility in scheduling them." },
+            { q: "If Activity A has an Expected Time of 5 days, Activity B takes 10 days, and they must be done sequentially, the total path takes:", options: ["15 days", "5 days", "10 days", "50 days"], a: 0, e: "Sequential activities' times are added together." },
+            { q: "If Activity C and Activity D can be done simultaneously (in parallel), and C takes 4 days while D takes 7 days, how long does this phase take?", options: ["7 days", "11 days", "4 days", "3 days"], a: 0, e: "Parallel activities take as long as the longest individual activity among them." },
+            { q: "What does 'Crashing' a project mean in CPM?", options: ["Spending additional money (resources) to compress the duration of critical path activities and finish the project faster", "Canceling the project entirely", "Deleting all non-critical activities", "Making the project take longer"], a: 0, e: "Crashing trades cost for time (e.g., paying for overtime or expedited shipping)." },
+            { q: "Which path should a manager 'Crash' to shorten the project duration?", options: ["Only activities on the Critical Path", "Activities with the most Slack", "Dummy activities", "Any random activity"], a: 0, e: "Crashing non-critical activities wastes money because they don't affect the final deadline." },
+            { q: "What is an 'Earliest Start Time' (EST)?", options: ["The earliest possible time an activity can begin, assuming all preceding activities are completed as fast as possible", "The latest time it can start", "The exact time the project finishes", "The time a dummy activity begins"], a: 0, e: "EST is calculated during the Forward Pass of the network." },
+            { q: "What is a 'Latest Finish Time' (LFT)?", options: ["The latest possible time an activity can finish without delaying the overall project deadline", "The earliest time an activity can finish", "The exact moment the project starts", "The time taken by the longest activity"], a: 0, e: "LFT is calculated during the Backward Pass of the network." },
+            { q: "How is 'Total Float' calculated?", options: ["Latest Finish Time (LFT) - Earliest Start Time (EST) - Activity Duration (t)", "Optimistic Time - Pessimistic Time", "Critical Path + Dummy Activity", "Total Cost / Total Time"], a: 0, e: "Float is the difference between the maximum time available and the actual time required." },
+            { q: "In a network diagram, two activities cannot have the exact same starting and ending nodes. How is this logical rule resolved?", options: ["By inserting a Dummy Activity", "By deleting one of the activities", "By adding their times together", "By changing the critical path"], a: 0, e: "Dummy activities keep the network logic clear and unambiguous for computer calculation." },
+            { q: "Which project management tool focuses heavily on the probability of completing a project within a specific time frame?", options: ["PERT", "CPM", "Gantt Chart", "WBS"], a: 0, e: "Because PERT uses statistical variance (optimistic/pessimistic), it calculates the probability of meeting deadlines." },
+            { q: "What is a 'WBS' (Work Breakdown Structure)?", options: ["A hierarchical decomposition of the total project into smaller, manageable components or deliverables", "A list of worker salaries", "A physical demolition process", "A chart showing project risks"], a: 0, e: "Before drawing a network, the project must be broken down into specific activities using a WBS." },
+            { q: "In CPM, 'Cost Slope' represents:", options: ["The extra cost incurred per unit of time saved when crashing an activity", "The slope of a physical hill on a construction site", "The cheapest activity", "The total budget of the project"], a: 0, e: "Cost Slope = (Crash Cost - Normal Cost) / (Normal Time - Crash Time). Managers crash the activity with the lowest cost slope first." },
+            { q: "Which tool is best for showing a simple progress presentation to non-technical stakeholders?", options: ["Gantt Chart", "Complex PERT Network", "CPM Cost Slope Table", "Mathematical Variance Equation"], a: 0, e: "Gantt charts are highly visual and incredibly easy to understand at a glance." },
+            { q: "What is 'Scope Creep' in project management?", options: ["The uncontrolled, continuous expansion of a project's goals or requirements without adjustments to time or budget", "The physical growth of a factory", "A slow internet connection", "The process of crashing a project"], a: 0, e: "Scope creep is a major cause of project failure and budget overruns." },
+            { q: "Which of the following projects would most likely use PERT?", options: ["Developing a brand new, never-before-seen aerospace technology", "Building a standard brick house", "Running a daily assembly line", "Baking a cake"], a: 0, e: "R&D projects have high uncertainty, making PERT's 3-time estimates essential." },
+            { q: "Which of the following projects would most likely use CPM?", options: ["Constructing a 10-story office building similar to others built before", "Inventing a cure for a new virus", "Writing a fantasy novel", "Developing experimental software"], a: 0, e: "Construction has highly predictable times and focuses on cost/time trade-offs, making CPM perfect." },
+
+            // 76-105: Supply Chain Management (SCM) & Logistics
+            { q: "What is 'Supply Chain Management' (SCM)?", options: ["The active management of supply chain activities to maximize customer value and achieve a sustainable competitive advantage", "Managing only the delivery trucks", "Managing the HR department", "Managing a single retail store"], a: 0, e: "SCM covers everything from raw material extraction to final product consumption." },
+            { q: "A typical Supply Chain involves the flow of:", options: ["Goods, Information, and Finances", "Only physical goods", "Only money", "Only emails"], a: 0, e: "A modern supply chain requires physical flow, information flow, and financial flow." },
+            { q: "Which of the following sequences represents a traditional physical supply chain?", options: ["Supplier -> Manufacturer -> Distributor -> Retailer -> Customer", "Customer -> Retailer -> Distributor -> Manufacturer -> Supplier", "Manufacturer -> Supplier -> Customer -> Retailer -> Distributor", "Retailer -> Supplier -> Customer -> Distributor -> Manufacturer"], a: 0, e: "Raw materials flow downstream from suppliers to the ultimate consumer." },
+            { q: "In Supply Chain terminology, what does 'Upstream' refer to?", options: ["Activities and partners closer to the raw material suppliers", "Activities closer to the final customer", "The marketing department", "The physical delivery trucks"], a: 0, e: "Upstream flows towards the origin of materials." },
+            { q: "In Supply Chain terminology, what does 'Downstream' refer to?", options: ["Activities and partners closer to the final customer/consumer", "The raw material extraction", "The factory floor", "The HR department"], a: 0, e: "Downstream flows towards the end-user." },
+            { q: "What is the difference between 'Logistics' and 'Supply Chain Management'?", options: ["Logistics is a subset of SCM focusing purely on the physical movement and storage of goods; SCM is broader and includes strategy, sourcing, and collaboration", "They are exactly the same thing", "Logistics includes manufacturing, SCM does not", "SCM only deals with trucks"], a: 0, e: "Logistics is just the transportation/warehousing piece of the massive SCM puzzle." },
+            { q: "What is the 'Bullwhip Effect' in SCM?", options: ["A phenomenon where small fluctuations in retail demand cause progressively larger fluctuations in demand further up the supply chain", "A physical whip used in factories", "A method to speed up delivery", "A discount given to suppliers"], a: 0, e: "Lack of communication causes manufacturers to overproduce wildly due to minor retail variations." },
+            { q: "How can a company reduce the Bullwhip Effect?", options: ["By sharing real-time sales and inventory data across the entire supply chain", "By keeping all data a secret", "By increasing prices randomly", "By firing the marketing team"], a: 0, e: "Information sharing ensures suppliers know exact consumer demand, preventing panic over-ordering." },
+            { q: "What does 'JIT' stand for in inventory management?", options: ["Just-In-Time", "Jump-In-Transit", "Joint-Inventory-Tracking", "Job-Instruction-Training"], a: 0, e: "JIT is a lean manufacturing philosophy." },
+            { q: "What is the primary goal of the Just-In-Time (JIT) inventory system?", options: ["To receive goods only as they are needed in the production process, minimizing inventory holding costs", "To fill warehouses to the maximum capacity", "To deliver goods to customers late", "To increase raw material waste"], a: 0, e: "Pioneered by Toyota, JIT eliminates the massive costs associated with storing unused inventory." },
+            { q: "What is a major risk of using a Just-In-Time (JIT) system?", options: ["If a supplier is delayed or a natural disaster occurs, production halts immediately due to zero backup inventory", "It requires too much warehouse space", "It makes products too cheap", "It causes overproduction"], a: 0, e: "JIT relies on perfect, disruption-free supply chains. COVID-19 exposed severe flaws in rigid JIT systems." },
+            { q: "What does 'EOQ' stand for in inventory management?", options: ["Economic Order Quantity", "Equal Ordering Quota", "Estimated Operational Quantity", "External Output Quotient"], a: 0, e: "EOQ is a vital supply chain calculation." },
+            { q: "What does the EOQ formula aim to minimize?", options: ["The total costs of ordering inventory and holding (carrying) inventory", "The quality of the product", "The wages of the workers", "The speed of delivery"], a: 0, e: "Ordering too often incurs high order costs; ordering too much incurs high storage costs. EOQ finds the perfect balance." },
+            { q: "In warehouse management, what does 'FIFO' stand for?", options: ["First-In, First-Out", "Fast-In, Fast-Out", "Final-Inventory, Final-Order", "Find-In, Find-Out"], a: 0, e: "FIFO ensures older stock is sold or used before newer stock, vital for perishable goods." },
+            { q: "In warehouse management, what does 'LIFO' stand for?", options: ["Last-In, First-Out", "Late-In, Fast-Out", "Lost-Inventory, Found-Order", "Linear-In, Flat-Out"], a: 0, e: "LIFO is used for non-perishable goods where the newest items added to the pile are taken off first." },
+            { q: "What is 'Reverse Logistics'?", options: ["The process of moving goods from their typical final destination back upstream (e.g., returns, recycling, or refurbishing)", "Driving delivery trucks backwards", "Shipping products overseas", "A fast delivery method"], a: 0, e: "Handling customer returns or recycling old electronics requires a robust reverse supply chain." },
+            { q: "What is 'Lead Time' in supply chain management?", options: ["The total time that elapses between placing an order and receiving the goods", "The time a manager spends leading the team", "The time taken to manufacture one unit", "The time a customer spends in a store"], a: 0, e: "Reducing lead time increases supply chain responsiveness and customer satisfaction." },
+            { q: "What is 'Safety Stock'?", options: ["Extra inventory kept on hand to guard against stockouts caused by unpredictable demand or supply delays", "Inventory that is kept in a locked safe", "Inventory meant only for the CEO", "Damaged inventory"], a: 0, e: "Safety stock acts as a buffer against the uncertainties of the real world." },
+            { q: "Which of the following is the 'SCOR' model used for?", options: ["Standardizing and measuring supply chain performance (Plan, Source, Make, Deliver, Return)", "Calculating employee salaries", "Designing software", "Testing product quality"], a: 0, e: "The Supply Chain Operations Reference (SCOR) model is the global standard for SCM." },
+            { q: "In the SCOR model, what does the 'Source' step involve?", options: ["Selecting suppliers and procuring the raw materials required to meet planned demand", "Manufacturing the product", "Delivering the product to the customer", "Handling customer returns"], a: 0, e: "Sourcing involves building relationships with vendors and purchasing goods." },
+            { q: "What is '3PL' in logistics?", options: ["Third-Party Logistics: Outsourcing transportation, warehousing, or distribution to an external company", "3-Point Loading", "Triple Pricing Logistics", "Third-Phase Liftoff"], a: 0, e: "Many companies focus on making products and hire 3PLs (like FedEx or DHL) to handle the shipping." },
+            { q: "What does 'Cross-Docking' mean in a logistics facility?", options: ["Unloading materials from an incoming truck and loading them directly into outbound trucks with little to no storage in between", "Storing goods for a year", "Crossing out incorrect shipping labels", "Parking trucks across the street"], a: 0, e: "Cross-docking eliminates warehousing costs and drastically speeds up distribution." },
+            { q: "What is 'Procurement'?", options: ["The overarching process of finding, agreeing to terms, and purchasing goods or services from external sources", "The process of manufacturing goods", "The process of advertising to customers", "The process of firing employees"], a: 0, e: "Procurement ensures the company gets the best quality materials at the best price." },
+            { q: "Which technology is revolutionizing supply chain traceability by providing an immutable, unhackable ledger of a product's journey?", options: ["Blockchain", "Microsoft Excel", "HTML", "Virtual Reality"], a: 0, e: "Blockchain allows companies to track the origin of a diamond or a food item with 100% certainty." },
+            { q: "What is the primary role of a 'Distributor' in a supply chain?", options: ["To buy products in bulk from manufacturers and sell them in smaller quantities to retailers", "To consume the final product", "To dig raw materials out of the ground", "To design the marketing logo"], a: 0, e: "Distributors act as the bridge between massive factory production and localized retail sales." },
+            { q: "What does 'SKU' stand for in inventory management?", options: ["Stock Keeping Unit: a unique alphanumeric code assigned to a specific product for tracking", "Store Keeping Utility", "Standard Kit Unit", "Serial Key Undertaking"], a: 0, e: "A red medium shirt has a different SKU than a blue medium shirt." },
+            { q: "What is an 'ERP' system?", options: ["Enterprise Resource Planning: comprehensive software integrating all departments (SCM, HR, Finance) into a single database", "Emergency Rescue Protocol", "Employee Retention Program", "External Retail Price"], a: 0, e: "Systems like SAP or Oracle ERP run the entire backend of massive supply chains." },
+            { q: "What is 'Outsourcing'?", options: ["Contracting out non-core business activities to external specialized companies to reduce costs and increase focus", "Hiring internal employees", "Building a new factory", "Stopping all production"], a: 0, e: "E.g., Apple designs iPhones (core) but outsources manufacturing to Foxconn." },
+            { q: "What does 'Omnichannel' mean in modern retail supply chains?", options: ["Providing a seamless shopping experience across all channels (online, mobile app, physical store)", "Selling only one type of product", "Using only one delivery truck", "A channel on TV"], a: 0, e: "Consumers expect to buy online and return in-store seamlessly, requiring complex omnichannel SCM." },
+            { q: "Why is 'Sustainability' becoming a critical focus in SCM?", options: ["To reduce the carbon footprint, minimize waste, and adhere to environmental regulations in logistics and sourcing", "To increase packaging waste", "To ignore environmental laws", "To burn more fossil fuels"], a: 0, e: "Green supply chains are demanded by modern consumers and governments." },
+
+            // 106-125: Agile Management & Product Management
+            { q: "What is 'Agile Management'?", options: ["An iterative and incremental approach to project management that focuses on continuous feedback, flexibility, and rapid delivery", "A strict, linear, unchangeable project plan", "A method for slow, heavy manufacturing", "A financial auditing tool"], a: 0, e: "Agile replaces the rigid 'Waterfall' approach, allowing teams to adapt to changes quickly." },
+            { q: "The 'Agile Manifesto' prioritizes 'Individuals and interactions' over:", options: ["Processes and tools", "Comprehensive documentation", "Contract negotiation", "Following a plan"], a: 0, e: "While processes are important, Agile believes people driving the process are more important." },
+            { q: "The 'Agile Manifesto' prioritizes 'Working software (or product)' over:", options: ["Comprehensive documentation", "Processes and tools", "Customer collaboration", "Responding to change"], a: 0, e: "A 500-page manual is useless if the actual product doesn't work." },
+            { q: "Which of the following is the most popular framework used to implement Agile principles?", options: ["Scrum", "Six Sigma", "PERT", "Waterfall"], a: 0, e: "Scrum breaks work into short cycles called Sprints." },
+            { q: "In the Scrum framework, what is a 'Sprint'?", options: ["A short, time-boxed period (usually 1-4 weeks) during which a specific set of work must be completed and made ready for review", "A physical running race", "A year-long planning phase", "A type of software bug"], a: 0, e: "Sprints ensure rapid delivery of small, working pieces of the final product." },
+            { q: "Who are the three core roles in a Scrum team?", options: ["Product Owner, Scrum Master, and Developers (The Team)", "CEO, Manager, and Worker", "Supplier, Manufacturer, and Retailer", "Planner, Organizer, and Controller"], a: 0, e: "Scrum abolishes traditional 'Project Managers' in favor of self-organizing teams." },
+            { q: "What is the primary responsibility of the 'Product Owner' in Scrum?", options: ["To represent the customer, define the product vision, and manage the Product Backlog", "To write the actual code/build the product", "To enforce Scrum rules", "To fire employees"], a: 0, e: "The Product Owner decides *what* needs to be built to maximize value." },
+            { q: "What is the primary responsibility of the 'Scrum Master'?", options: ["To act as a servant-leader, removing impediments and ensuring the team follows Scrum practices", "To act as a dictator assigning daily tasks", "To design the product's marketing", "To manage the budget"], a: 0, e: "The Scrum Master protects the team from distractions so they can focus on work." },
+            { q: "What is the 'Product Backlog'?", options: ["A prioritized, constantly updated list of everything that needs to be built or fixed in the product", "A list of fired employees", "A backlog of unsold inventory", "A financial debt"], a: 0, e: "It acts as the single source of truth for all required product features." },
+            { q: "What is a 'Daily Standup' (Daily Scrum)?", options: ["A brief, 15-minute daily meeting where the team syncs up on progress and identifies blockers", "An hour-long meeting to punish slow workers", "A weekly planning session", "A meeting with external customers"], a: 0, e: "Team members answer 3 questions: What did I do yesterday? What will I do today? What is blocking me?" },
+            { q: "How does the 'Waterfall' methodology differ from Agile?", options: ["Waterfall is linear and sequential (finish one phase completely before starting the next); Agile is iterative and flexible", "Waterfall is faster than Agile", "Waterfall uses Sprints", "Agile requires no planning"], a: 0, e: "Waterfall is terrible for software because requirements change, but perfect for building a physical bridge." },
+            { q: "What is an 'MVP' in Agile Product Management?", options: ["Minimum Viable Product: a version of a product with just enough features to satisfy early customers and gather feedback", "Maximum Value Proposition", "Most Valuable Player", "Minimum Visual Product"], a: 0, e: "Don't build a massive product in secret. Build a simple MVP, release it, and improve based on feedback." },
+            { q: "What does a 'Kanban Board' primarily do?", options: ["Visualizes the workflow using columns (e.g., To Do, In Progress, Done) to limit work-in-progress and maximize efficiency", "Calculates payroll", "Tracks employee attendance", "Shows financial graphs"], a: 0, e: "Kanban, meaning 'signboard' in Japanese, is highly visual and popular in Agile teams." },
+            { q: "In Agile, what is a 'User Story'?", options: ["A short, simple description of a feature told from the perspective of the person who desires the new capability", "A long 50-page technical manual", "A rumor on the grapevine", "An excuse for missing a deadline"], a: 0, e: "Format: 'As a [user], I want [feature], so that [benefit].'" },
+            { q: "What is a 'Sprint Retrospective'?", options: ["A meeting at the end of a Sprint where the team reflects on what went well, what went wrong, and how to improve next time", "A meeting to show the product to the customer", "A meeting to fire the Scrum Master", "A daily 15-minute meeting"], a: 0, e: "Continuous improvement is the heart of Agile, driven by the Retrospective." },
+            { q: "What is the primary goal of 'Product Management'?", options: ["To guide the strategy, roadmap, and feature definition of a product or product line from inception to launch", "To assemble the product physically in a factory", "To manage the HR department", "To only sell the product"], a: 0, e: "Product Managers sit at the intersection of business, technology, and user experience (UX)." },
+            { q: "What does 'Timeboxing' mean in Agile?", options: ["Allocating a fixed, strict maximum unit of time to an activity (like a Sprint or a meeting)", "Boxing a physical clock", "Working overtime", "Ignoring deadlines"], a: 0, e: "Timeboxing forces prioritization and prevents meetings or development cycles from dragging on forever." },
+            { q: "Agile values 'Responding to change' over:", options: ["Following a plan", "Customer collaboration", "Working software", "Interactions"], a: 0, e: "If the market changes, an Agile team pivots immediately, rather than blindly following an outdated 2-year plan." },
+            { q: "What is a 'Sprint Review'?", options: ["A meeting to demonstrate the working product increment to stakeholders and gather feedback", "A meeting to plan the next sprint", "A meeting to discuss team conflicts", "A daily status update"], a: 0, e: "The Review focuses on the *product*, while the Retrospective focuses on the *process*." },
+            { q: "Which industry originally popularized the Agile methodology?", options: ["Software Development", "Construction", "Agriculture", "Textile Manufacturing"], a: 0, e: "The 2001 Agile Manifesto was written by software developers frustrated with the slow, rigid Waterfall method." },
+
+            // 126-150: Management Tools (Six Thinking Hats, Psychometrics) & Wrap Up
+            { q: "Who developed the 'Six Thinking Hats' technique?", options: ["Edward de Bono", "F.W. Taylor", "Henry Fayol", "Peter Drucker"], a: 0, e: "Edward de Bono created this tool for parallel thinking and problem-solving." },
+            { q: "What is the primary purpose of the Six Thinking Hats technique?", options: ["To allow a group to think together in a parallel, structured manner, avoiding arguments and exploring all perspectives of an issue", "To determine employee salaries", "To calculate project duration", "To design physical hats"], a: 0, e: "It forces everyone in the room to look at a problem from the same angle at the same time." },
+            { q: "In the Six Thinking Hats, what does the WHITE Hat represent?", options: ["Facts, figures, information, and objective data", "Emotions and feelings", "Caution and risks", "Creativity and new ideas"], a: 0, e: "White is neutral and objective, like a blank sheet of paper." },
+            { q: "In the Six Thinking Hats, what does the RED Hat represent?", options: ["Emotions, intuition, gut feelings, and hunches without needing justification", "Control and organization", "Optimism and benefits", "Information and data"], a: 0, e: "Red symbolizes fire and warmth, allowing people to express feelings without logic." },
+            { q: "In the Six Thinking Hats, what does the BLACK Hat represent?", options: ["Caution, critical thinking, risks, and looking at why something might NOT work", "Creativity and alternatives", "Emotions", "Facts and figures"], a: 0, e: "Black is the judge's robe—cautious and careful. It prevents fatal mistakes but shouldn't be overused." },
+            { q: "In the Six Thinking Hats, what does the YELLOW Hat represent?", options: ["Optimism, exploring the value, benefits, and positive aspects of an idea", "Risks and dangers", "Process control", "Raw data"], a: 0, e: "Yellow symbolizes sunshine and brightness, focusing on the logical positive aspects." },
+            { q: "In the Six Thinking Hats, what does the GREEN Hat represent?", options: ["Creativity, alternative solutions, out-of-the-box thinking, and new ideas", "Emotions", "Critical judgment", "Organizing the meeting"], a: 0, e: "Green symbolizes nature and growth, generating new concepts without judgment." },
+            { q: "In the Six Thinking Hats, what does the BLUE Hat represent?", options: ["Process control, organizing the thinking process, and managing the other hats (usually worn by the meeting facilitator)", "Creativity", "Optimism", "Gut feelings"], a: 0, e: "Blue symbolizes the sky above everything; it controls the agenda and summarizes conclusions." },
+            { q: "During a meeting, the manager says, 'Let's take off the Black Hat and put on the Green Hat.' What does this mean?", options: ["Stop criticizing the risks and start brainstorming creative alternatives", "Stop looking at facts and start showing emotions", "Stop being optimistic and start looking at data", "Stop the meeting and go outside"], a: 0, e: "It shifts the group's mental focus from criticism to creativity." },
+            { q: "Why is 'Parallel Thinking' (used in the Six Hats) superior to traditional argumentative thinking?", options: ["It forces all participants to explore one perspective together rather than arguing opposing views simultaneously", "It allows the boss to dictate the answer", "It is much louder", "It requires no thinking"], a: 0, e: "Instead of A arguing why an idea is good and B arguing why it's bad, both A and B wear the Black hat together, then the Yellow hat together." },
+            { q: "What is 'Brainstorming'?", options: ["A group creativity technique where members spontaneously generate a massive list of ideas without immediate judgment or criticism", "A strict physical exercise", "A mathematical calculation", "A method for firing employees"], a: 0, e: "Brainstorming separates idea generation from idea evaluation." },
+            { q: "When using psychometric tests in management, what does the 'Myers-Briggs Type Indicator' (MBTI) primarily assess?", options: ["Personality types and psychological preferences in how people perceive the world and make decisions", "Typing speed", "Physical strength", "Mathematical genius"], a: 0, e: "MBTI categorizes personalities (e.g., INTJ, ESFP) to help build balanced teams." },
+            { q: "What is the primary benefit of using a psychometric test during recruitment?", options: ["It provides standardized, objective, and measurable data about a candidate's mental and behavioral fit for the role", "It completely replaces the need for an interview", "It proves the candidate's past work experience", "It measures their physical health"], a: 0, e: "Tests remove human bias, providing data on how a candidate handles stress or teamwork." },
+            { q: "What does 'Emotional Intelligence' (EQ) refer to in modern management?", options: ["The ability to understand, use, and manage one's own emotions, and to empathize with others", "The ability to solve complex math equations in your head", "The ability to memorize manuals", "The ability to type quickly"], a: 0, e: "High EQ is often considered more important than high IQ for leadership and management roles." },
+            { q: "Which tool is commonly used to visually map out a project's timeline and progress?", options: ["Gantt Chart", "Pie Chart", "Fishbone Diagram", "Scatter Plot"], a: 0, e: "Gantt charts are the universal standard for basic project scheduling." },
+            { q: "In the context of the MSBTE K-Scheme, modern management heavily emphasizes 'Soft Skills'. What are they?", options: ["Interpersonal skills like communication, teamwork, adaptability, and emotional intelligence", "Skills related to soft materials like textiles", "Coding in software", "Operating heavy machinery"], a: 0, e: "Soft skills are essential for the 'Directing' and 'Organizing' functions of management." },
+            { q: "What is a 'Fishbone Diagram' (Ishikawa Diagram) used for?", options: ["Root Cause Analysis: identifying all potential causes of a specific problem or defect", "Scheduling a project", "Calculating employee salaries", "Testing psychometric behavior"], a: 0, e: "It visually maps causes (Equipment, Process, People, Materials) leading to an effect (the problem)." },
+            { q: "What does the 'Pareto Principle' (80/20 Rule) state in management?", options: ["Roughly 80% of the effects/results come from 20% of the causes/efforts", "Everyone should work 80 hours a week", "80% of workers are lazy", "Prices should be discounted by 20%"], a: 0, e: "Managers use this to focus on the vital 20% of tasks or clients that yield 80% of the value." },
+            { q: "What is 'Kaizen' in management philosophy?", options: ["A Japanese concept meaning 'Continuous Improvement' through small, ongoing positive changes in processes", "A type of martial art", "A sudden, massive structural reorganization", "A software program"], a: 0, e: "Kaizen empowers every employee to suggest daily, incremental improvements." },
+            { q: "What does 'Benchmarking' mean?", options: ["Comparing one's own business processes and performance metrics to industry bests and best practices from other companies", "Drawing a mark on a workbench", "Firing the lowest performing employees", "Setting a random goal"], a: 0, e: "Benchmarking helps a company identify gaps in its performance by looking at market leaders." },
+            { q: "In HR Management, what is '360-Degree Feedback'?", options: ["An appraisal system where an employee receives anonymous feedback from supervisors, peers, and subordinates", "A physical fitness test", "A customer survey", "A daily checklist"], a: 0, e: "It provides a holistic view of the employee's behavior and performance." },
+            { q: "What is 'TQM'?", options: ["Total Quality Management: an organization-wide approach focused on continuously improving quality and customer satisfaction", "Time Quantity Matrix", "Total Quotation Method", "Team Quality Meeting"], a: 0, e: "TQM involves all employees in continual improvement efforts." },
+            { q: "In Supply Chain Management, what is 'Reverse Logistics' used for?", options: ["Handling customer returns, recycling, and refurbishing old products", "Shipping goods to international markets", "Speeding up the assembly line", "Paying suppliers"], a: 0, e: "It deals with the flow of goods moving backward from the customer to the manufacturer." },
+            { q: "Which Project Management tool is absolutely necessary when task durations are highly uncertain?", options: ["PERT (Program Evaluation and Review Technique)", "CPM (Critical Path Method)", "Basic Gantt Chart", "Fishbone Diagram"], a: 0, e: "PERT uses three time estimates to calculate the probability of completion under uncertainty." },
+            { q: "Ultimately, what is the goal of integrating all these tools (Agile, PERT, SCM, HR) in modern Management?", options: ["To achieve organizational objectives efficiently, effectively, and adaptably in a highly dynamic global environment", "To create unnecessary paperwork", "To replace human workers entirely with machines", "To make management confusing"], a: 0, e: "Modern management requires a multi-disciplinary approach to survive and thrive." }
+        ];
+
+        let currentIdx = 0, score = 0, answered = false;
+
+        function startQuiz() {
+            document.getElementById('start-screen').classList.add('hidden');
+            document.getElementById('quiz-screen').classList.remove('hidden');
+            
+            const totalQuestions = questions.length;
+            document.getElementById('progress-text').innerText = `Question 1/${totalQuestions}`;
+            document.getElementById('final-total').innerText = `Correct out of ${totalQuestions}`;
+            
+            // Fisher-Yates shuffle for the options
+            questions.forEach(q => {
+                const originalCorrect = q.options[q.a];
+                for (let i = q.options.length - 1; i > 0; i--) {
+                    const j = Math.floor(Math.random() * (i + 1));
+                    [q.options[i], q.options[j]] = [q.options[j], q.options[i]];
+                }
+                q.a = q.options.indexOf(originalCorrect);
+            });
+
+            loadQuestion();
+        }
+
+        function loadQuestion() {
+            const q = questions[currentIdx];
+            const totalQuestions = questions.length;
+            
+            document.getElementById('question-text').innerText = q.q;
+            document.getElementById('progress-text').innerText = `Question ${currentIdx + 1}/${totalQuestions}`;
+            document.getElementById('progress-bar').style.width = `${((currentIdx + 1) / totalQuestions) * 100}%`;
+            
+            const container = document.getElementById('options-container');
+            container.innerHTML = '';
+            
+            q.options.forEach((opt, i) => {
+                const btn = document.createElement('button');
+                btn.className = "w-full text-left p-4 rounded-2xl border-2 border-slate-100 hover:border-rose-300 hover:bg-rose-50 font-medium text-sm text-slate-700 transition-all";
+                btn.innerText = opt;
+                btn.onclick = () => selectOption(i, btn);
+                container.appendChild(btn);
+            });
+            
+            document.getElementById('explanation-box').classList.add('hidden');
+            document.getElementById('next-btn').classList.add('hidden');
+            answered = false;
+        }
+
+        function selectOption(idx, btn) {
+            if (answered) return;
+            answered = true;
+            
+            const q = questions[currentIdx];
+            const allBtns = document.querySelectorAll('#options-container button');
+            
+            if (idx === q.a) {
+                score++;
+                btn.classList.add('border-green-500', 'bg-green-50', 'text-green-700');
+                document.getElementById('score-text').innerText = `Score: ${score}`;
+            } else {
+                btn.classList.add('border-red-500', 'bg-red-50', 'text-red-700');
+                allBtns[q.a].classList.add('border-green-500', 'bg-green-50', 'text-green-700');
+            }
+            
+            const exp = document.getElementById('explanation-box');
+            exp.innerHTML = `<strong>Explanation:</strong> ${q.e}`;
+            exp.classList.remove('hidden');
+            document.getElementById('next-btn').classList.remove('hidden');
+        }
+
+        function nextQuestion() {
+            if (currentIdx < questions.length - 1) {
+                currentIdx++;
+                loadQuestion();
+            } else {
+                document.getElementById('quiz-screen').classList.add('hidden');
+                document.getElementById('result-screen').classList.remove('hidden');
+                document.getElementById('final-score').innerText = score;
+            }
+        }
+    </script>
+</body>
+</html>
