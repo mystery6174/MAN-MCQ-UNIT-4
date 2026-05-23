@@ -53,157 +53,1052 @@
     <script>
         // The correct answer is at index 0 in the source. JavaScript shuffles them randomly at runtime!
         const questions = [
-            // 1-30: Human Resource Management & Psychometric Tests
-            { q: "What does HRM stand for?", options: ["Human Resource Management", "Human Relations Measurement", "Human Rights Management", "Higher Resource Maintenance"], a: 0, e: "HRM focuses on recruiting, managing, and directing the people who work in an organization." },
-            { q: "The primary purpose of Human Resource Management is to:", options: ["Maximize employee performance in service of an employer's strategic objectives", "Only handle payroll and salaries", "Fix computer networks and IT issues", "Market the company's products"], a: 0, e: "HRM aligns the workforce's skills and motivation with the company's ultimate business goals." },
-            { q: "Which process involves actively attracting a pool of qualified candidates for a job opening?", options: ["Recruitment", "Selection", "Training", "Appraisal"], a: 0, e: "Recruitment is the positive process of generating a pool of capable applicants." },
-            { q: "How is 'Selection' different from 'Recruitment'?", options: ["Selection is a negative process of eliminating unsuitable candidates to choose the best one", "Selection comes before recruitment", "Selection only involves internal employees", "There is no difference"], a: 0, e: "While recruitment attracts many, selection filters them out, making it a 'negative' process." },
-            { q: "Promoting an existing employee to a higher position is an example of:", options: ["Internal Recruitment", "External Recruitment", "Off-the-job Training", "Direct Selection"], a: 0, e: "Internal recruitment fills vacancies from within the existing workforce." },
-            { q: "Which of the following is an 'External' source of recruitment?", options: ["Campus interviews and employment agencies", "Promotions", "Transfers", "Demotions"], a: 0, e: "Campus placements bring in fresh talent from outside the organization." },
-            { q: "What is the primary purpose of an 'Aptitude Test' during the selection process?", options: ["To measure a candidate's potential or capacity to learn new skills", "To measure physical strength", "To check their medical history", "To test their current typing speed"], a: 0, e: "Aptitude tests predict how well someone can learn a new job." },
-            { q: "Which test is used to evaluate a candidate's traits, emotional stability, and behavioral style?", options: ["Personality / Psychometric Test", "Trade Test", "Dexterity Test", "Knowledge Test"], a: 0, e: "Psychometric personality tests see if a candidate is an introvert/extrovert and how they handle stress." },
-            { q: "What are 'Psychometric Tests' primarily designed to measure?", options: ["Mental capabilities, cognitive abilities, and behavioral style", "Physical endurance and stamina", "Past employment history", "Financial literacy"], a: 0, e: "They provide an objective measurement of the mind and personality." },
-            { q: "A 'Trade Test' or 'Proficiency Test' aims to measure:", options: ["The skills and knowledge the candidate already possesses", "Their hidden potential to learn", "Their emotional stability", "Their honesty"], a: 0, e: "If you hire a programmer, a trade test asks them to write actual code to prove they can do it." },
-            { q: "What is 'On-the-Job Training' (OJT)?", options: ["Training an employee at the actual workplace while they perform the job", "Sending an employee to a university", "Training through virtual reality only", "Reading a manual at home"], a: 0, e: "OJT involves 'learning by doing' directly on the shop floor or desk." },
-            { q: "Which of the following is an example of Off-the-Job training?", options: ["Classroom lectures and seminars", "Apprenticeship", "Job rotation", "Coaching by a supervisor"], a: 0, e: "Off-the-job training takes the employee away from the actual work environment to learn." },
-            { q: "What is 'Performance Appraisal'?", options: ["The systematic evaluation of an employee's job performance and contribution to the organization", "The process of firing an employee", "The calculation of total factory output", "The process of hiring a manager"], a: 0, e: "It is used for promotions, salary hikes, and identifying training needs." },
-            { q: "Which performance appraisal method involves gathering feedback from an employee's subordinates, peers, and supervisors?", options: ["360-Degree Feedback", "Ranking Method", "Graphic Rating Scale", "Critical Incident Method"], a: 0, e: "360-degree feedback provides a comprehensive view from all directions around the employee." },
-            { q: "What does 'Job Analysis' involve?", options: ["Systematically collecting detailed information about the duties, responsibilities, and skills required for a specific job", "Analyzing the factory's financial budget", "Checking the quality of a product", "Evaluating a competitor's product"], a: 0, e: "Job analysis creates the foundation for job descriptions and job specifications." },
-            { q: "A 'Job Description' is a written statement outlining:", options: ["The roles, duties, tasks, and responsibilities of the job itself", "The personal qualifications required of the candidate", "The company's annual profit", "The exact salary of the employee"], a: 0, e: "It describes *what* the job is." },
-            { q: "A 'Job Specification' outlines:", options: ["The human qualities, education, and experience required to perform the job", "The physical location of the job", "The working hours", "The daily tasks to be done"], a: 0, e: "It describes *who* is needed to do the job." },
-            { q: "What is 'Induction' or 'Orientation' in HR?", options: ["The process of introducing a new employee to the organization, its policies, and their coworkers", "The final exit interview", "The process of calculating wages", "A physical fitness test"], a: 0, e: "Induction helps new hires settle in comfortably and quickly." },
-            { q: "What is 'Job Rotation'?", options: ["Moving an employee through different jobs or departments to broaden their skills and reduce boredom", "Firing an employee and hiring a new one", "Making employees work night shifts", "Reducing an employee's workload"], a: 0, e: "It creates a multi-skilled workforce capable of handling various tasks." },
-            { q: "Which function of HRM deals with ensuring a safe, healthy, and happy workplace?", options: ["Employee Welfare and Health", "Recruitment", "Performance Appraisal", "Job Analysis"], a: 0, e: "Welfare ensures workers have canteens, medical facilities, and safe environments." },
-            { q: "What is the primary purpose of an 'Exit Interview'?", options: ["To understand why an employee is leaving the organization and gather feedback to improve retention", "To force the employee to stay", "To give them their final paycheck", "To threaten the employee"], a: 0, e: "Exit interviews provide honest insights into company problems." },
-            { q: "What is 'Compensation Management' in HR?", options: ["Designing and administering equitable salaries, wages, and benefits for employees", "Managing customer complaints", "Controlling factory machinery", "Managing the company's stock price"], a: 0, e: "It ensures employees are paid fairly to keep them motivated." },
-            { q: "The 'Halo Effect' is a common error in Performance Appraisal. What does it mean?", options: ["Rating an employee highly on all traits based on just one positive trait", "Rating everyone as average", "Judging an employee based on a single mistake", "Rating employees based on their age"], a: 0, e: "If a worker is very punctual, a manager might mistakenly rate them high on technical skills too." },
-            { q: "What does 'Fringe Benefits' or 'Perks' refer to?", options: ["Extra benefits supplementing an employee's salary, like health insurance or a company car", "The base monthly salary", "Overtime wages", "Money deducted for taxes"], a: 0, e: "Perks help attract and retain top talent beyond just the base salary." },
-            { q: "Which act is most commonly associated with HR compliance in Indian manufacturing?", options: ["The Factories Act, 1948", "The IT Act, 2000", "The Consumer Protection Act", "The Companies Act"], a: 0, e: "The Factories Act ensures safety, health, and welfare of workers in factories." },
-            { q: "What does an HR 'Grievance Handling' mechanism do?", options: ["Provides a formal process for employees to raise complaints and have them resolved fairly", "Fires complaining employees", "Manages customer returns", "Ignores employee issues"], a: 0, e: "A strong grievance system maintains industrial peace and morale." },
-            { q: "Which of the following is considered an intangible HR asset?", options: ["Employee morale and corporate culture", "Office furniture", "Factory machinery", "Company vehicles"], a: 0, e: "Morale cannot be touched, but it is one of the company's most valuable assets." },
-            { q: "What does 'Workforce Planning' involve?", options: ["Forecasting the future demand and supply of employees to ensure the company has the right number of people", "Planning the annual office party", "Deciding which products to manufacture", "Calculating the monthly electricity bill"], a: 0, e: "It ensures the company is neither overstaffed nor understaffed." },
-            { q: "A structured questionnaire that asks candidates how they would react in specific hypothetical situations is called a:", options: ["Situational Judgment Test", "Physical Endurance Test", "Medical Test", "Financial Audit"], a: 0, e: "These tests assess decision-making and problem-solving skills in real-world scenarios." },
-            { q: "Why do companies use Psychometric Tests?", options: ["Because they provide objective, standardized data that removes human bias from the hiring process", "Because they are required by the government", "To test the candidate's typing speed", "To check their social media accounts"], a: 0, e: "Standardized tests prevent interviewers from hiring based purely on 'gut feeling'." },
+  // TLO 4.1 - Marketing Management and Techniques
 
-            // 31-75: Project Management, PERT, CPM, Gantt Charts
-            { q: "What is a 'Project'?", options: ["A temporary endeavor undertaken to create a unique product, service, or result", "A continuous, repetitive manufacturing process", "A daily routine task", "A permanent company department"], a: 0, e: "Projects have a definitive start and end date, unlike daily operations." },
-            { q: "Which of the following represents the correct Project Life Cycle phases?", options: ["Initiation -> Planning -> Execution -> Monitoring -> Closure", "Execution -> Planning -> Closure -> Initiation -> Monitoring", "Planning -> Closure -> Execution -> Initiation", "Initiation -> Closure -> Execution -> Planning"], a: 0, e: "A project must be initiated, planned, executed, monitored, and finally closed." },
-            { q: "Who introduced the Gantt Chart?", options: ["Henry L. Gantt", "F.W. Taylor", "Henry Fayol", "Peter Drucker"], a: 0, e: "Henry Gantt developed this visual scheduling tool in the 1910s." },
-            { q: "What is a 'Gantt Chart' primarily used for?", options: ["Visualizing a project schedule by displaying tasks against a timeline using horizontal bars", "Calculating the project's financial budget", "Designing the product's blueprint", "Evaluating employee performance"], a: 0, e: "The X-axis represents time, and the Y-axis lists tasks, with bars showing duration." },
-            { q: "What is a major limitation of a basic Gantt Chart?", options: ["It does not clearly show the dependencies and interrelationships between complex activities", "It is too expensive to draw", "It only works for one-day projects", "It cannot show time durations"], a: 0, e: "While good for simple schedules, network diagrams (PERT/CPM) are needed to show complex task dependencies." },
-            { q: "What does 'PERT' stand for?", options: ["Program Evaluation and Review Technique", "Project Estimation and Rating Tool", "Process Evaluation and Reporting Task", "Program Execution and Review Timeline"], a: 0, e: "PERT was developed by the US Navy in the 1950s for the Polaris missile project." },
-            { q: "What does 'CPM' stand for?", options: ["Critical Path Method", "Critical Process Management", "Central Path Module", "Complex Project Method"], a: 0, e: "CPM was developed by DuPont for complex chemical plant maintenance projects." },
-            { q: "The primary difference between PERT and CPM is that:", options: ["PERT is probabilistic (deals with uncertainty in time), while CPM is deterministic (assumes exact time known)", "PERT is used for construction, CPM is used for R&D", "PERT uses bar charts, CPM uses pie charts", "There is absolutely no difference"], a: 0, e: "PERT uses 3 time estimates because R&D projects have uncertain durations. CPM uses 1 time estimate." },
-            { q: "Which technique is highly 'Event-oriented'?", options: ["PERT", "CPM", "Gantt Chart", "Six Sigma"], a: 0, e: "PERT focuses on the start and completion of events (nodes)." },
-            { q: "Which technique is highly 'Activity-oriented'?", options: ["CPM", "PERT", "SWOT Analysis", "Maslow's Theory"], a: 0, e: "CPM focuses strictly on the activities (arrows) and optimizing their cost-time trade-offs." },
-            { q: "In a network diagram, what does an 'Activity' represent?", options: ["A specific task that consumes time and resources, represented by an arrow", "A point in time marking the start or end of a task", "A mathematical equation", "A project manager"], a: 0, e: "Activities are the actual work being done." },
-            { q: "In a network diagram, what does an 'Event' (or Node) represent?", options: ["A specific point in time marking the beginning or end of an activity, consuming no time or resources", "The actual work being done", "A delay in the project", "A physical material"], a: 0, e: "Events are usually drawn as circles (nodes) connecting the arrows." },
-            { q: "What is a 'Dummy Activity' in network analysis?", options: ["An artificial activity used only to show logical dependency between events, consuming zero time and zero resources", "An activity done by unskilled workers", "An activity that failed", "A physical break in the project"], a: 0, e: "Dummy activities are drawn as dashed arrows purely to maintain network logic." },
-            { q: "In PERT, the 'Optimistic Time' (To) is:", options: ["The shortest possible time to complete an activity if everything goes perfectly", "The average time it takes", "The absolute longest time it could take", "The time it takes to crash the project"], a: 0, e: "Optimistic time assumes zero delays or issues." },
-            { q: "In PERT, the 'Pessimistic Time' (Tp) is:", options: ["The longest possible time an activity might take if everything goes wrong (excluding natural disasters)", "The shortest possible time", "The most normal, expected time", "The time a dummy activity takes"], a: 0, e: "Pessimistic time accounts for major setbacks and delays." },
-            { q: "In PERT, the 'Most Likely Time' (Tm) is:", options: ["The most probable time required to complete the activity under normal conditions", "The absolute fastest time", "The absolute slowest time", "The exact time a competitor took"], a: 0, e: "This is the time you would normally expect the job to take." },
-            { q: "What is the formula to calculate the 'Expected Time' (Te) in PERT?", options: ["Te = (Optimistic + 4(Most Likely) + Pessimistic) / 6", "Te = (Optimistic + Pessimistic) / 2", "Te = (Most Likely + Pessimistic) / 3", "Te = (Optimistic + Most Likely + Pessimistic) / 3"], a: 0, e: "This weighted average heavily weights the 'most likely' time while factoring in the extremes." },
-            { q: "What is the 'Critical Path' in a project network?", options: ["The longest path through the network, determining the shortest possible time the entire project can be completed", "The shortest path through the network", "The path with the most dummy activities", "The path that uses the least money"], a: 0, e: "Because it's the longest sequence of tasks, any delay on the critical path delays the entire project." },
-            { q: "What is the value of 'Slack' or 'Float' on the Critical Path?", options: ["Zero", "Maximum", "Infinite", "Negative one"], a: 0, e: "Critical activities have zero slack; they cannot be delayed without delaying the final deadline." },
-            { q: "What does 'Slack' or 'Float' mean in project management?", options: ["The amount of time an activity can be delayed without delaying the overall project completion date", "The time workers spend taking breaks", "The amount of money saved", "The time taken by a dummy activity"], a: 0, e: "Non-critical paths have float, giving managers flexibility in scheduling them." },
-            { q: "If Activity A has an Expected Time of 5 days, Activity B takes 10 days, and they must be done sequentially, the total path takes:", options: ["15 days", "5 days", "10 days", "50 days"], a: 0, e: "Sequential activities' times are added together." },
-            { q: "If Activity C and Activity D can be done simultaneously (in parallel), and C takes 4 days while D takes 7 days, how long does this phase take?", options: ["7 days", "11 days", "4 days", "3 days"], a: 0, e: "Parallel activities take as long as the longest individual activity among them." },
-            { q: "What does 'Crashing' a project mean in CPM?", options: ["Spending additional money (resources) to compress the duration of critical path activities and finish the project faster", "Canceling the project entirely", "Deleting all non-critical activities", "Making the project take longer"], a: 0, e: "Crashing trades cost for time (e.g., paying for overtime or expedited shipping)." },
-            { q: "Which path should a manager 'Crash' to shorten the project duration?", options: ["Only activities on the Critical Path", "Activities with the most Slack", "Dummy activities", "Any random activity"], a: 0, e: "Crashing non-critical activities wastes money because they don't affect the final deadline." },
-            { q: "What is an 'Earliest Start Time' (EST)?", options: ["The earliest possible time an activity can begin, assuming all preceding activities are completed as fast as possible", "The latest time it can start", "The exact time the project finishes", "The time a dummy activity begins"], a: 0, e: "EST is calculated during the Forward Pass of the network." },
-            { q: "What is a 'Latest Finish Time' (LFT)?", options: ["The latest possible time an activity can finish without delaying the overall project deadline", "The earliest time an activity can finish", "The exact moment the project starts", "The time taken by the longest activity"], a: 0, e: "LFT is calculated during the Backward Pass of the network." },
-            { q: "How is 'Total Float' calculated?", options: ["Latest Finish Time (LFT) - Earliest Start Time (EST) - Activity Duration (t)", "Optimistic Time - Pessimistic Time", "Critical Path + Dummy Activity", "Total Cost / Total Time"], a: 0, e: "Float is the difference between the maximum time available and the actual time required." },
-            { q: "In a network diagram, two activities cannot have the exact same starting and ending nodes. How is this logical rule resolved?", options: ["By inserting a Dummy Activity", "By deleting one of the activities", "By adding their times together", "By changing the critical path"], a: 0, e: "Dummy activities keep the network logic clear and unambiguous for computer calculation." },
-            { q: "Which project management tool focuses heavily on the probability of completing a project within a specific time frame?", options: ["PERT", "CPM", "Gantt Chart", "WBS"], a: 0, e: "Because PERT uses statistical variance (optimistic/pessimistic), it calculates the probability of meeting deadlines." },
-            { q: "What is a 'WBS' (Work Breakdown Structure)?", options: ["A hierarchical decomposition of the total project into smaller, manageable components or deliverables", "A list of worker salaries", "A physical demolition process", "A chart showing project risks"], a: 0, e: "Before drawing a network, the project must be broken down into specific activities using a WBS." },
-            { q: "In CPM, 'Cost Slope' represents:", options: ["The extra cost incurred per unit of time saved when crashing an activity", "The slope of a physical hill on a construction site", "The cheapest activity", "The total budget of the project"], a: 0, e: "Cost Slope = (Crash Cost - Normal Cost) / (Normal Time - Crash Time). Managers crash the activity with the lowest cost slope first." },
-            { q: "Which tool is best for showing a simple progress presentation to non-technical stakeholders?", options: ["Gantt Chart", "Complex PERT Network", "CPM Cost Slope Table", "Mathematical Variance Equation"], a: 0, e: "Gantt charts are highly visual and incredibly easy to understand at a glance." },
-            { q: "What is 'Scope Creep' in project management?", options: ["The uncontrolled, continuous expansion of a project's goals or requirements without adjustments to time or budget", "The physical growth of a factory", "A slow internet connection", "The process of crashing a project"], a: 0, e: "Scope creep is a major cause of project failure and budget overruns." },
-            { q: "Which of the following projects would most likely use PERT?", options: ["Developing a brand new, never-before-seen aerospace technology", "Building a standard brick house", "Running a daily assembly line", "Baking a cake"], a: 0, e: "R&D projects have high uncertainty, making PERT's 3-time estimates essential." },
-            { q: "Which of the following projects would most likely use CPM?", options: ["Constructing a 10-story office building similar to others built before", "Inventing a cure for a new virus", "Writing a fantasy novel", "Developing experimental software"], a: 0, e: "Construction has highly predictable times and focuses on cost/time trade-offs, making CPM perfect." },
+  {
+    q: "Marketing Management refers to the process of:",
+    options: [
+      "Only advertising products to customers",
+      "Planning, organizing, implementing, and controlling marketing activities to achieve organizational goals",
+      "Managing only the sales department",
+      "Setting product prices and distribution channels"
+    ],
+    a: 1,
+    e: "Marketing Management refers to the process of planning, organizing, implementing, and controlling marketing activities to achieve organizational goals."
+  },
+  {
+    q: "Marketing Management involves analyzing market opportunities and designing marketing strategies to meet the needs of:",
+    options: [
+      "Only shareholders",
+      "Only employees",
+      "Target customers while optimizing resources and ensuring profitability",
+      "Only government regulators"
+    ],
+    a: 2,
+    e: "Marketing Management involves analyzing market opportunities, designing marketing strategies, and executing them to meet the needs of target customers while optimizing resources and ensuring profitability."
+  },
+  {
+    q: "Which significance of marketing management helps businesses understand and cater to customer needs?",
+    options: [
+      "Market Differentiation",
+      "Brand Building",
+      "Customer-Centric Approach",
+      "Profitability"
+    ],
+    a: 2,
+    e: "Customer-Centric Approach: Marketing management helps businesses understand and cater to customer needs, ensuring that products or services are aligned with customer preferences."
+  },
+  {
+    q: "Which significance of marketing management guides a business in creating and executing long-term strategies for sustained growth?",
+    options: [
+      "Customer-Centric Approach",
+      "Strategic Planning",
+      "Market Differentiation",
+      "Adaptation to Market Changes"
+    ],
+    a: 1,
+    e: "Strategic Planning: Effective marketing management guides a business in creating and executing long-term strategies, leading to sustained growth."
+  },
+  {
+    q: "Which significance of marketing management allows businesses to differentiate their products and create a competitive advantage?",
+    options: [
+      "Strategic Planning",
+      "Brand Building",
+      "Market Differentiation",
+      "Profitability"
+    ],
+    a: 2,
+    e: "Market Differentiation: By managing marketing activities, businesses can differentiate their products and services, creating a competitive advantage in the market."
+  },
+  {
+    q: "Which significance of marketing management strengthens brand image, leading to better customer loyalty?",
+    options: [
+      "Market Differentiation",
+      "Brand Building",
+      "Profitability",
+      "Adaptation to Market Changes"
+    ],
+    a: 1,
+    e: "Brand Building: Proper marketing management strengthens brand image and reputation, leading to better customer loyalty and increased market share."
+  },
+  {
+    q: "Marketing management optimizes marketing investments, ensuring a higher return on investment (ROI) and long-term:",
+    options: [
+      "Employee retention",
+      "Supply chain efficiency",
+      "Profitability",
+      "Production capacity"
+    ],
+    a: 2,
+    e: "Profitability: Marketing management optimizes marketing investments, ensuring a higher return on investment (ROI) and long-term profitability."
+  },
+  {
+    q: "ROI in marketing management strategy stands for:",
+    options: [
+      "Rate of Interest",
+      "Return on Investment",
+      "Range of Internet",
+      "Refer on Interest"
+    ],
+    a: 1,
+    e: "ROI stands for Return on Investment — marketing management optimizes investments to ensure higher ROI and long-term profitability."
+  },
+  {
+    q: "Who originally introduced the 'Four P's' of Marketing?",
+    options: [
+      "Philip Kotler",
+      "F.W. Taylor",
+      "Jerome McCarthy",
+      "Peter Drucker"
+    ],
+    a: 2,
+    e: "Originally, the 'Four P's' were introduced by Jerome McCarthy, but later expanded to include three additional elements, particularly in service-based industries."
+  },
+  {
+    q: "How many P's are in the expanded Marketing Mix?",
+    options: [
+      "4",
+      "5",
+      "6",
+      "7"
+    ],
+    a: 3,
+    e: "The expanded marketing mix consists of Seven P's: Product, Price, Place, Promotion, People, Process, and Physical Evidence."
+  },
+  {
+    q: "Which of the Seven P's refers to the goods or services offered by a business including design, features, quality, and brand?",
+    options: [
+      "Price",
+      "Place",
+      "Product",
+      "Promotion"
+    ],
+    a: 2,
+    e: "Product: Refers to the goods or services offered by a business. It includes the design, features, quality, brand, and warranty of the product."
+  },
+  {
+    q: "Pricing strategies such as discounting, bundling, psychological pricing, and premium pricing belong to which of the Seven P's?",
+    options: [
+      "Product",
+      "Price",
+      "Place",
+      "Promotion"
+    ],
+    a: 1,
+    e: "Price: The cost customers are willing to pay for the product or service. Pricing strategies include discounting, bundling, psychological pricing, and premium pricing."
+  },
+  {
+    q: "Which of the Seven P's refers to the distribution channels through which the product reaches the customer?",
+    options: [
+      "Product",
+      "Promotion",
+      "People",
+      "Place"
+    ],
+    a: 3,
+    e: "Place: Refers to the distribution channels through which the product or service reaches the customer. The goal is to make the product easily accessible to the target market."
+  },
+  {
+    q: "Which of the Seven P's involves advertising, sales promotions, public relations, personal selling, and digital marketing?",
+    options: [
+      "Place",
+      "People",
+      "Promotion",
+      "Process"
+    ],
+    a: 2,
+    e: "Promotion: Involves all the activities used to make the product known and attract customers, such as advertising, sales promotions, public relations, personal selling, and digital marketing."
+  },
+  {
+    q: "Which of the Seven P's refers to everyone involved in the product or service, from employees to customers?",
+    options: [
+      "Process",
+      "Physical Evidence",
+      "Promotion",
+      "People"
+    ],
+    a: 3,
+    e: "People: Refers to everyone involved in the product or service, from employees to customers. In service marketing, the interaction between employees and customers is vital."
+  },
+  {
+    q: "Which of the Seven P's refers to the procedures, mechanisms, and flow of activities through which the product is provided?",
+    options: [
+      "People",
+      "Process",
+      "Physical Evidence",
+      "Promotion"
+    ],
+    a: 1,
+    e: "Process: The procedures, mechanisms, and flow of activities through which the product or service is provided to the customer. An efficient process ensures consistency, quality, and a positive customer experience."
+  },
+  {
+    q: "Which of the Seven P's includes packaging, store design, branding, website design, and the physical environment of service delivery?",
+    options: [
+      "Place",
+      "Process",
+      "People",
+      "Physical Evidence"
+    ],
+    a: 3,
+    e: "Physical Evidence: Includes any tangible or visible aspects that reinforce the brand or the service, such as packaging, store design, branding, website design, or the physical environment where the service is delivered."
+  },
+  {
+    q: "Marketing management helps businesses remain flexible and responsive to changes in market trends, customer behavior, and competition — this is called:",
+    options: [
+      "Brand Building",
+      "Profitability",
+      "Adaptation to Market Changes",
+      "Strategic Planning"
+    ],
+    a: 2,
+    e: "Adaptation to Market Changes: Marketing management helps businesses remain flexible and responsive to changes in market trends, customer behavior, and competition."
+  },
 
-            // 76-105: Supply Chain Management (SCM) & Logistics
-            { q: "What is 'Supply Chain Management' (SCM)?", options: ["The active management of supply chain activities to maximize customer value and achieve a sustainable competitive advantage", "Managing only the delivery trucks", "Managing the HR department", "Managing a single retail store"], a: 0, e: "SCM covers everything from raw material extraction to final product consumption." },
-            { q: "A typical Supply Chain involves the flow of:", options: ["Goods, Information, and Finances", "Only physical goods", "Only money", "Only emails"], a: 0, e: "A modern supply chain requires physical flow, information flow, and financial flow." },
-            { q: "Which of the following sequences represents a traditional physical supply chain?", options: ["Supplier -> Manufacturer -> Distributor -> Retailer -> Customer", "Customer -> Retailer -> Distributor -> Manufacturer -> Supplier", "Manufacturer -> Supplier -> Customer -> Retailer -> Distributor", "Retailer -> Supplier -> Customer -> Distributor -> Manufacturer"], a: 0, e: "Raw materials flow downstream from suppliers to the ultimate consumer." },
-            { q: "In Supply Chain terminology, what does 'Upstream' refer to?", options: ["Activities and partners closer to the raw material suppliers", "Activities closer to the final customer", "The marketing department", "The physical delivery trucks"], a: 0, e: "Upstream flows towards the origin of materials." },
-            { q: "In Supply Chain terminology, what does 'Downstream' refer to?", options: ["Activities and partners closer to the final customer/consumer", "The raw material extraction", "The factory floor", "The HR department"], a: 0, e: "Downstream flows towards the end-user." },
-            { q: "What is the difference between 'Logistics' and 'Supply Chain Management'?", options: ["Logistics is a subset of SCM focusing purely on the physical movement and storage of goods; SCM is broader and includes strategy, sourcing, and collaboration", "They are exactly the same thing", "Logistics includes manufacturing, SCM does not", "SCM only deals with trucks"], a: 0, e: "Logistics is just the transportation/warehousing piece of the massive SCM puzzle." },
-            { q: "What is the 'Bullwhip Effect' in SCM?", options: ["A phenomenon where small fluctuations in retail demand cause progressively larger fluctuations in demand further up the supply chain", "A physical whip used in factories", "A method to speed up delivery", "A discount given to suppliers"], a: 0, e: "Lack of communication causes manufacturers to overproduce wildly due to minor retail variations." },
-            { q: "How can a company reduce the Bullwhip Effect?", options: ["By sharing real-time sales and inventory data across the entire supply chain", "By keeping all data a secret", "By increasing prices randomly", "By firing the marketing team"], a: 0, e: "Information sharing ensures suppliers know exact consumer demand, preventing panic over-ordering." },
-            { q: "What does 'JIT' stand for in inventory management?", options: ["Just-In-Time", "Jump-In-Transit", "Joint-Inventory-Tracking", "Job-Instruction-Training"], a: 0, e: "JIT is a lean manufacturing philosophy." },
-            { q: "What is the primary goal of the Just-In-Time (JIT) inventory system?", options: ["To receive goods only as they are needed in the production process, minimizing inventory holding costs", "To fill warehouses to the maximum capacity", "To deliver goods to customers late", "To increase raw material waste"], a: 0, e: "Pioneered by Toyota, JIT eliminates the massive costs associated with storing unused inventory." },
-            { q: "What is a major risk of using a Just-In-Time (JIT) system?", options: ["If a supplier is delayed or a natural disaster occurs, production halts immediately due to zero backup inventory", "It requires too much warehouse space", "It makes products too cheap", "It causes overproduction"], a: 0, e: "JIT relies on perfect, disruption-free supply chains. COVID-19 exposed severe flaws in rigid JIT systems." },
-            { q: "What does 'EOQ' stand for in inventory management?", options: ["Economic Order Quantity", "Equal Ordering Quota", "Estimated Operational Quantity", "External Output Quotient"], a: 0, e: "EOQ is a vital supply chain calculation." },
-            { q: "What does the EOQ formula aim to minimize?", options: ["The total costs of ordering inventory and holding (carrying) inventory", "The quality of the product", "The wages of the workers", "The speed of delivery"], a: 0, e: "Ordering too often incurs high order costs; ordering too much incurs high storage costs. EOQ finds the perfect balance." },
-            { q: "In warehouse management, what does 'FIFO' stand for?", options: ["First-In, First-Out", "Fast-In, Fast-Out", "Final-Inventory, Final-Order", "Find-In, Find-Out"], a: 0, e: "FIFO ensures older stock is sold or used before newer stock, vital for perishable goods." },
-            { q: "In warehouse management, what does 'LIFO' stand for?", options: ["Last-In, First-Out", "Late-In, Fast-Out", "Lost-Inventory, Found-Order", "Linear-In, Flat-Out"], a: 0, e: "LIFO is used for non-perishable goods where the newest items added to the pile are taken off first." },
-            { q: "What is 'Reverse Logistics'?", options: ["The process of moving goods from their typical final destination back upstream (e.g., returns, recycling, or refurbishing)", "Driving delivery trucks backwards", "Shipping products overseas", "A fast delivery method"], a: 0, e: "Handling customer returns or recycling old electronics requires a robust reverse supply chain." },
-            { q: "What is 'Lead Time' in supply chain management?", options: ["The total time that elapses between placing an order and receiving the goods", "The time a manager spends leading the team", "The time taken to manufacture one unit", "The time a customer spends in a store"], a: 0, e: "Reducing lead time increases supply chain responsiveness and customer satisfaction." },
-            { q: "What is 'Safety Stock'?", options: ["Extra inventory kept on hand to guard against stockouts caused by unpredictable demand or supply delays", "Inventory that is kept in a locked safe", "Inventory meant only for the CEO", "Damaged inventory"], a: 0, e: "Safety stock acts as a buffer against the uncertainties of the real world." },
-            { q: "Which of the following is the 'SCOR' model used for?", options: ["Standardizing and measuring supply chain performance (Plan, Source, Make, Deliver, Return)", "Calculating employee salaries", "Designing software", "Testing product quality"], a: 0, e: "The Supply Chain Operations Reference (SCOR) model is the global standard for SCM." },
-            { q: "In the SCOR model, what does the 'Source' step involve?", options: ["Selecting suppliers and procuring the raw materials required to meet planned demand", "Manufacturing the product", "Delivering the product to the customer", "Handling customer returns"], a: 0, e: "Sourcing involves building relationships with vendors and purchasing goods." },
-            { q: "What is '3PL' in logistics?", options: ["Third-Party Logistics: Outsourcing transportation, warehousing, or distribution to an external company", "3-Point Loading", "Triple Pricing Logistics", "Third-Phase Liftoff"], a: 0, e: "Many companies focus on making products and hire 3PLs (like FedEx or DHL) to handle the shipping." },
-            { q: "What does 'Cross-Docking' mean in a logistics facility?", options: ["Unloading materials from an incoming truck and loading them directly into outbound trucks with little to no storage in between", "Storing goods for a year", "Crossing out incorrect shipping labels", "Parking trucks across the street"], a: 0, e: "Cross-docking eliminates warehousing costs and drastically speeds up distribution." },
-            { q: "What is 'Procurement'?", options: ["The overarching process of finding, agreeing to terms, and purchasing goods or services from external sources", "The process of manufacturing goods", "The process of advertising to customers", "The process of firing employees"], a: 0, e: "Procurement ensures the company gets the best quality materials at the best price." },
-            { q: "Which technology is revolutionizing supply chain traceability by providing an immutable, unhackable ledger of a product's journey?", options: ["Blockchain", "Microsoft Excel", "HTML", "Virtual Reality"], a: 0, e: "Blockchain allows companies to track the origin of a diamond or a food item with 100% certainty." },
-            { q: "What is the primary role of a 'Distributor' in a supply chain?", options: ["To buy products in bulk from manufacturers and sell them in smaller quantities to retailers", "To consume the final product", "To dig raw materials out of the ground", "To design the marketing logo"], a: 0, e: "Distributors act as the bridge between massive factory production and localized retail sales." },
-            { q: "What does 'SKU' stand for in inventory management?", options: ["Stock Keeping Unit: a unique alphanumeric code assigned to a specific product for tracking", "Store Keeping Utility", "Standard Kit Unit", "Serial Key Undertaking"], a: 0, e: "A red medium shirt has a different SKU than a blue medium shirt." },
-            { q: "What is an 'ERP' system?", options: ["Enterprise Resource Planning: comprehensive software integrating all departments (SCM, HR, Finance) into a single database", "Emergency Rescue Protocol", "Employee Retention Program", "External Retail Price"], a: 0, e: "Systems like SAP or Oracle ERP run the entire backend of massive supply chains." },
-            { q: "What is 'Outsourcing'?", options: ["Contracting out non-core business activities to external specialized companies to reduce costs and increase focus", "Hiring internal employees", "Building a new factory", "Stopping all production"], a: 0, e: "E.g., Apple designs iPhones (core) but outsources manufacturing to Foxconn." },
-            { q: "What does 'Omnichannel' mean in modern retail supply chains?", options: ["Providing a seamless shopping experience across all channels (online, mobile app, physical store)", "Selling only one type of product", "Using only one delivery truck", "A channel on TV"], a: 0, e: "Consumers expect to buy online and return in-store seamlessly, requiring complex omnichannel SCM." },
-            { q: "Why is 'Sustainability' becoming a critical focus in SCM?", options: ["To reduce the carbon footprint, minimize waste, and adhere to environmental regulations in logistics and sourcing", "To increase packaging waste", "To ignore environmental laws", "To burn more fossil fuels"], a: 0, e: "Green supply chains are demanded by modern consumers and governments." },
+  // TLO 4.2 - Needs, Wants, Demands, and CRM
 
-            // 106-125: Agile Management & Product Management
-            { q: "What is 'Agile Management'?", options: ["An iterative and incremental approach to project management that focuses on continuous feedback, flexibility, and rapid delivery", "A strict, linear, unchangeable project plan", "A method for slow, heavy manufacturing", "A financial auditing tool"], a: 0, e: "Agile replaces the rigid 'Waterfall' approach, allowing teams to adapt to changes quickly." },
-            { q: "The 'Agile Manifesto' prioritizes 'Individuals and interactions' over:", options: ["Processes and tools", "Comprehensive documentation", "Contract negotiation", "Following a plan"], a: 0, e: "While processes are important, Agile believes people driving the process are more important." },
-            { q: "The 'Agile Manifesto' prioritizes 'Working software (or product)' over:", options: ["Comprehensive documentation", "Processes and tools", "Customer collaboration", "Responding to change"], a: 0, e: "A 500-page manual is useless if the actual product doesn't work." },
-            { q: "Which of the following is the most popular framework used to implement Agile principles?", options: ["Scrum", "Six Sigma", "PERT", "Waterfall"], a: 0, e: "Scrum breaks work into short cycles called Sprints." },
-            { q: "In the Scrum framework, what is a 'Sprint'?", options: ["A short, time-boxed period (usually 1-4 weeks) during which a specific set of work must be completed and made ready for review", "A physical running race", "A year-long planning phase", "A type of software bug"], a: 0, e: "Sprints ensure rapid delivery of small, working pieces of the final product." },
-            { q: "Who are the three core roles in a Scrum team?", options: ["Product Owner, Scrum Master, and Developers (The Team)", "CEO, Manager, and Worker", "Supplier, Manufacturer, and Retailer", "Planner, Organizer, and Controller"], a: 0, e: "Scrum abolishes traditional 'Project Managers' in favor of self-organizing teams." },
-            { q: "What is the primary responsibility of the 'Product Owner' in Scrum?", options: ["To represent the customer, define the product vision, and manage the Product Backlog", "To write the actual code/build the product", "To enforce Scrum rules", "To fire employees"], a: 0, e: "The Product Owner decides *what* needs to be built to maximize value." },
-            { q: "What is the primary responsibility of the 'Scrum Master'?", options: ["To act as a servant-leader, removing impediments and ensuring the team follows Scrum practices", "To act as a dictator assigning daily tasks", "To design the product's marketing", "To manage the budget"], a: 0, e: "The Scrum Master protects the team from distractions so they can focus on work." },
-            { q: "What is the 'Product Backlog'?", options: ["A prioritized, constantly updated list of everything that needs to be built or fixed in the product", "A list of fired employees", "A backlog of unsold inventory", "A financial debt"], a: 0, e: "It acts as the single source of truth for all required product features." },
-            { q: "What is a 'Daily Standup' (Daily Scrum)?", options: ["A brief, 15-minute daily meeting where the team syncs up on progress and identifies blockers", "An hour-long meeting to punish slow workers", "A weekly planning session", "A meeting with external customers"], a: 0, e: "Team members answer 3 questions: What did I do yesterday? What will I do today? What is blocking me?" },
-            { q: "How does the 'Waterfall' methodology differ from Agile?", options: ["Waterfall is linear and sequential (finish one phase completely before starting the next); Agile is iterative and flexible", "Waterfall is faster than Agile", "Waterfall uses Sprints", "Agile requires no planning"], a: 0, e: "Waterfall is terrible for software because requirements change, but perfect for building a physical bridge." },
-            { q: "What is an 'MVP' in Agile Product Management?", options: ["Minimum Viable Product: a version of a product with just enough features to satisfy early customers and gather feedback", "Maximum Value Proposition", "Most Valuable Player", "Minimum Visual Product"], a: 0, e: "Don't build a massive product in secret. Build a simple MVP, release it, and improve based on feedback." },
-            { q: "What does a 'Kanban Board' primarily do?", options: ["Visualizes the workflow using columns (e.g., To Do, In Progress, Done) to limit work-in-progress and maximize efficiency", "Calculates payroll", "Tracks employee attendance", "Shows financial graphs"], a: 0, e: "Kanban, meaning 'signboard' in Japanese, is highly visual and popular in Agile teams." },
-            { q: "In Agile, what is a 'User Story'?", options: ["A short, simple description of a feature told from the perspective of the person who desires the new capability", "A long 50-page technical manual", "A rumor on the grapevine", "An excuse for missing a deadline"], a: 0, e: "Format: 'As a [user], I want [feature], so that [benefit].'" },
-            { q: "What is a 'Sprint Retrospective'?", options: ["A meeting at the end of a Sprint where the team reflects on what went well, what went wrong, and how to improve next time", "A meeting to show the product to the customer", "A meeting to fire the Scrum Master", "A daily 15-minute meeting"], a: 0, e: "Continuous improvement is the heart of Agile, driven by the Retrospective." },
-            { q: "What is the primary goal of 'Product Management'?", options: ["To guide the strategy, roadmap, and feature definition of a product or product line from inception to launch", "To assemble the product physically in a factory", "To manage the HR department", "To only sell the product"], a: 0, e: "Product Managers sit at the intersection of business, technology, and user experience (UX)." },
-            { q: "What does 'Timeboxing' mean in Agile?", options: ["Allocating a fixed, strict maximum unit of time to an activity (like a Sprint or a meeting)", "Boxing a physical clock", "Working overtime", "Ignoring deadlines"], a: 0, e: "Timeboxing forces prioritization and prevents meetings or development cycles from dragging on forever." },
-            { q: "Agile values 'Responding to change' over:", options: ["Following a plan", "Customer collaboration", "Working software", "Interactions"], a: 0, e: "If the market changes, an Agile team pivots immediately, rather than blindly following an outdated 2-year plan." },
-            { q: "What is a 'Sprint Review'?", options: ["A meeting to demonstrate the working product increment to stakeholders and gather feedback", "A meeting to plan the next sprint", "A meeting to discuss team conflicts", "A daily status update"], a: 0, e: "The Review focuses on the *product*, while the Retrospective focuses on the *process*." },
-            { q: "Which industry originally popularized the Agile methodology?", options: ["Software Development", "Construction", "Agriculture", "Textile Manufacturing"], a: 0, e: "The 2001 Agile Manifesto was written by software developers frustrated with the slow, rigid Waterfall method." },
+  {
+    q: "In marketing, a 'need' is defined as:",
+    options: [
+      "Something you desire beyond basic requirements",
+      "Something essential for survival or well-being like food, water, and shelter",
+      "The willingness and ability to purchase a product",
+      "A desire shaped by culture and personal preference"
+    ],
+    a: 1,
+    e: "Need: A need is something essential for survival or well-being, like food, water, and shelter. Without these, we can't live properly."
+  },
+  {
+    q: "Which of the following is an example of a basic 'need' in marketing?",
+    options: [
+      "A luxury car",
+      "A smartphone",
+      "Food and water",
+      "A designer handbag"
+    ],
+    a: 2,
+    e: "Food and water are basic needs — they are essential for survival or well-being."
+  },
+  {
+    q: "In marketing, a 'want' is described as:",
+    options: [
+      "Something essential for survival",
+      "The ability to purchase a product",
+      "Something you desire beyond basic needs, shaped by culture and personal preference",
+      "A legally binding requirement"
+    ],
+    a: 2,
+    e: "Want: A want is something you desire beyond basic needs, shaped by culture and personal preference. Wants are often influenced by trends and advertising."
+  },
+  {
+    q: "Wanting pizza or sushi when you need food is an example of which marketing concept?",
+    options: [
+      "Need",
+      "Want",
+      "Demand",
+      "Desire"
+    ],
+    a: 1,
+    e: "You need food, but might want pizza or sushi — this illustrates the concept of 'Want' in marketing."
+  },
+  {
+    q: "In marketing, 'demand' happens when:",
+    options: [
+      "People simply wish for a product",
+      "Companies produce more than customers need",
+      "People want a product and can afford to buy it",
+      "Government mandates purchase of a product"
+    ],
+    a: 2,
+    e: "Demand: Demand happens when people want a product and can afford to buy it."
+  },
+  {
+    q: "Wanting a luxury watch, but only purchasing it when you can afford it, represents which marketing concept?",
+    options: [
+      "Need",
+      "Want",
+      "Demand",
+      "Desire"
+    ],
+    a: 2,
+    e: "You might want a luxury watch, but only if you can afford it does it become demand — this illustrates the concept of 'Demand' in marketing."
+  },
+  {
+    q: "According to the marketing material, the formula for Desire is:",
+    options: [
+      "Need × Demand = Desire",
+      "Want + Demand = Desire",
+      "Need + Want = Desire",
+      "Need − Want = Desire"
+    ],
+    a: 2,
+    e: "NEED + WANT = DESIRE — this is the formula given in the marketing material."
+  },
+  {
+    q: "Customer Relationship Management (CRM) refers to:",
+    options: [
+      "Only the technology software used to manage customer data",
+      "The practices, strategies, and technologies businesses use to manage and analyze customer interactions throughout the customer lifecycle",
+      "Only the customer service department of a company",
+      "Only the marketing campaigns targeted at existing customers"
+    ],
+    a: 1,
+    e: "Customer Relationship Management (CRM) refers to the practices, strategies, and technologies that businesses use to manage and analyze customer interactions and data throughout the customer lifecycle."
+  },
+  {
+    q: "The goal of CRM is to:",
+    options: [
+      "Maximize production efficiency",
+      "Improve customer service, increase customer satisfaction, build strong relationships, and drive business growth",
+      "Reduce marketing costs",
+      "Automate all business processes"
+    ],
+    a: 1,
+    e: "The goal of CRM is to improve customer service, increase customer satisfaction, build strong relationships, and drive business growth."
+  },
+  {
+    q: "Which is the first step in the CRM process?",
+    options: [
+      "Customer Acquisition",
+      "Customer Engagement",
+      "Customer Identification",
+      "Customer Retention"
+    ],
+    a: 2,
+    e: "Customer Identification is the first step in the CRM process — it involves collecting customer data (name, contact, preferences) using surveys, website sign-ups, and social media."
+  },
+  {
+    q: "In the CRM process, attracting new customers through marketing campaigns, ads, and promotions belongs to which step?",
+    options: [
+      "Customer Identification",
+      "Customer Acquisition",
+      "Customer Engagement",
+      "Customer Retention"
+    ],
+    a: 1,
+    e: "Customer Acquisition: Attract new customers through marketing campaigns, ads, promotions. Offer discounts or first-time purchase benefits."
+  },
+  {
+    q: "Interacting with customers via emails, social media, and mobile apps while providing personalized recommendations belongs to which CRM step?",
+    options: [
+      "Customer Acquisition",
+      "Customer Retention",
+      "Customer Engagement",
+      "Customer Loyalty & Growth"
+    ],
+    a: 2,
+    e: "Customer Engagement: Interact with customers via emails, social media, mobile apps, and customer service. Provide personalized recommendations and offers."
+  },
+  {
+    q: "Ensuring high satisfaction through loyalty programs, follow-ups, and quick complaint resolution belongs to which CRM step?",
+    options: [
+      "Customer Engagement",
+      "Customer Retention",
+      "Customer Acquisition",
+      "Customer Identification"
+    ],
+    a: 1,
+    e: "Customer Retention: Ensure high satisfaction through loyalty programs, follow-ups, and excellent support. Solve complaints quickly and offer rewards for repeat purchases."
+  },
+  {
+    q: "Turning happy customers into brand ambassadors and encouraging word-of-mouth marketing belongs to which CRM step?",
+    options: [
+      "Customer Retention",
+      "Customer Engagement",
+      "Customer Acquisition",
+      "Customer Loyalty & Growth"
+    ],
+    a: 3,
+    e: "Customer Loyalty & Growth: Turn happy customers into brand ambassadors. Encourage word-of-mouth marketing and long-term relationships."
+  },
+  {
+    q: "Which benefit of CRM helps businesses identify opportunities for cross-selling, up-selling, and nurturing leads?",
+    options: [
+      "Improved Customer Satisfaction",
+      "Efficient Operations",
+      "Increased Sales and Revenue",
+      "Better Customer Retention"
+    ],
+    a: 2,
+    e: "Increased Sales and Revenue: CRM helps businesses identify opportunities for cross-selling, up-selling, and nurturing leads, leading to higher sales and revenue."
+  },
+  {
+    q: "Domino's Pizza using mobile apps, personalized offers, quick feedback, and loyalty programs is an example of effective:",
+    options: [
+      "Supply Chain Management",
+      "Human Resource Management",
+      "Customer Relationship Management (CRM)",
+      "Quality Management"
+    ],
+    a: 2,
+    e: "Domino's India successfully uses CRM tools like mobile apps, personalized offers, quick feedback, and loyalty programs to maintain strong relationships with customers."
+  },
+  {
+    q: "Which benefit of CRM involves automating tasks like data entry, follow-ups, and customer segmentation?",
+    options: [
+      "Improved Customer Satisfaction",
+      "Efficient Operations",
+      "Better Customer Retention",
+      "Stronger Customer Insights"
+    ],
+    a: 1,
+    e: "Efficient Operations: Automating tasks like data entry, follow-ups, and customer segmentation streamlines business operations, saving time and resources."
+  },
+  {
+    q: "Analyzing customer data through CRM to uncover trends and preferences belongs to which CRM benefit?",
+    options: [
+      "Increased Sales and Revenue",
+      "Better Customer Retention",
+      "Efficient Operations",
+      "Stronger Customer Insights"
+    ],
+    a: 3,
+    e: "Stronger Customer Insights: Analyzing customer data through CRM helps businesses uncover trends and preferences, allowing for more targeted and effective marketing strategies."
+  },
 
-            // 126-150: Management Tools (Six Thinking Hats, Psychometrics) & Wrap Up
-            { q: "Who developed the 'Six Thinking Hats' technique?", options: ["Edward de Bono", "F.W. Taylor", "Henry Fayol", "Peter Drucker"], a: 0, e: "Edward de Bono created this tool for parallel thinking and problem-solving." },
-            { q: "What is the primary purpose of the Six Thinking Hats technique?", options: ["To allow a group to think together in a parallel, structured manner, avoiding arguments and exploring all perspectives of an issue", "To determine employee salaries", "To calculate project duration", "To design physical hats"], a: 0, e: "It forces everyone in the room to look at a problem from the same angle at the same time." },
-            { q: "In the Six Thinking Hats, what does the WHITE Hat represent?", options: ["Facts, figures, information, and objective data", "Emotions and feelings", "Caution and risks", "Creativity and new ideas"], a: 0, e: "White is neutral and objective, like a blank sheet of paper." },
-            { q: "In the Six Thinking Hats, what does the RED Hat represent?", options: ["Emotions, intuition, gut feelings, and hunches without needing justification", "Control and organization", "Optimism and benefits", "Information and data"], a: 0, e: "Red symbolizes fire and warmth, allowing people to express feelings without logic." },
-            { q: "In the Six Thinking Hats, what does the BLACK Hat represent?", options: ["Caution, critical thinking, risks, and looking at why something might NOT work", "Creativity and alternatives", "Emotions", "Facts and figures"], a: 0, e: "Black is the judge's robe—cautious and careful. It prevents fatal mistakes but shouldn't be overused." },
-            { q: "In the Six Thinking Hats, what does the YELLOW Hat represent?", options: ["Optimism, exploring the value, benefits, and positive aspects of an idea", "Risks and dangers", "Process control", "Raw data"], a: 0, e: "Yellow symbolizes sunshine and brightness, focusing on the logical positive aspects." },
-            { q: "In the Six Thinking Hats, what does the GREEN Hat represent?", options: ["Creativity, alternative solutions, out-of-the-box thinking, and new ideas", "Emotions", "Critical judgment", "Organizing the meeting"], a: 0, e: "Green symbolizes nature and growth, generating new concepts without judgment." },
-            { q: "In the Six Thinking Hats, what does the BLUE Hat represent?", options: ["Process control, organizing the thinking process, and managing the other hats (usually worn by the meeting facilitator)", "Creativity", "Optimism", "Gut feelings"], a: 0, e: "Blue symbolizes the sky above everything; it controls the agenda and summarizes conclusions." },
-            { q: "During a meeting, the manager says, 'Let's take off the Black Hat and put on the Green Hat.' What does this mean?", options: ["Stop criticizing the risks and start brainstorming creative alternatives", "Stop looking at facts and start showing emotions", "Stop being optimistic and start looking at data", "Stop the meeting and go outside"], a: 0, e: "It shifts the group's mental focus from criticism to creativity." },
-            { q: "Why is 'Parallel Thinking' (used in the Six Hats) superior to traditional argumentative thinking?", options: ["It forces all participants to explore one perspective together rather than arguing opposing views simultaneously", "It allows the boss to dictate the answer", "It is much louder", "It requires no thinking"], a: 0, e: "Instead of A arguing why an idea is good and B arguing why it's bad, both A and B wear the Black hat together, then the Yellow hat together." },
-            { q: "What is 'Brainstorming'?", options: ["A group creativity technique where members spontaneously generate a massive list of ideas without immediate judgment or criticism", "A strict physical exercise", "A mathematical calculation", "A method for firing employees"], a: 0, e: "Brainstorming separates idea generation from idea evaluation." },
-            { q: "When using psychometric tests in management, what does the 'Myers-Briggs Type Indicator' (MBTI) primarily assess?", options: ["Personality types and psychological preferences in how people perceive the world and make decisions", "Typing speed", "Physical strength", "Mathematical genius"], a: 0, e: "MBTI categorizes personalities (e.g., INTJ, ESFP) to help build balanced teams." },
-            { q: "What is the primary benefit of using a psychometric test during recruitment?", options: ["It provides standardized, objective, and measurable data about a candidate's mental and behavioral fit for the role", "It completely replaces the need for an interview", "It proves the candidate's past work experience", "It measures their physical health"], a: 0, e: "Tests remove human bias, providing data on how a candidate handles stress or teamwork." },
-            { q: "What does 'Emotional Intelligence' (EQ) refer to in modern management?", options: ["The ability to understand, use, and manage one's own emotions, and to empathize with others", "The ability to solve complex math equations in your head", "The ability to memorize manuals", "The ability to type quickly"], a: 0, e: "High EQ is often considered more important than high IQ for leadership and management roles." },
-            { q: "Which tool is commonly used to visually map out a project's timeline and progress?", options: ["Gantt Chart", "Pie Chart", "Fishbone Diagram", "Scatter Plot"], a: 0, e: "Gantt charts are the universal standard for basic project scheduling." },
-            { q: "In the context of the MSBTE K-Scheme, modern management heavily emphasizes 'Soft Skills'. What are they?", options: ["Interpersonal skills like communication, teamwork, adaptability, and emotional intelligence", "Skills related to soft materials like textiles", "Coding in software", "Operating heavy machinery"], a: 0, e: "Soft skills are essential for the 'Directing' and 'Organizing' functions of management." },
-            { q: "What is a 'Fishbone Diagram' (Ishikawa Diagram) used for?", options: ["Root Cause Analysis: identifying all potential causes of a specific problem or defect", "Scheduling a project", "Calculating employee salaries", "Testing psychometric behavior"], a: 0, e: "It visually maps causes (Equipment, Process, People, Materials) leading to an effect (the problem)." },
-            { q: "What does the 'Pareto Principle' (80/20 Rule) state in management?", options: ["Roughly 80% of the effects/results come from 20% of the causes/efforts", "Everyone should work 80 hours a week", "80% of workers are lazy", "Prices should be discounted by 20%"], a: 0, e: "Managers use this to focus on the vital 20% of tasks or clients that yield 80% of the value." },
-            { q: "What is 'Kaizen' in management philosophy?", options: ["A Japanese concept meaning 'Continuous Improvement' through small, ongoing positive changes in processes", "A type of martial art", "A sudden, massive structural reorganization", "A software program"], a: 0, e: "Kaizen empowers every employee to suggest daily, incremental improvements." },
-            { q: "What does 'Benchmarking' mean?", options: ["Comparing one's own business processes and performance metrics to industry bests and best practices from other companies", "Drawing a mark on a workbench", "Firing the lowest performing employees", "Setting a random goal"], a: 0, e: "Benchmarking helps a company identify gaps in its performance by looking at market leaders." },
-            { q: "In HR Management, what is '360-Degree Feedback'?", options: ["An appraisal system where an employee receives anonymous feedback from supervisors, peers, and subordinates", "A physical fitness test", "A customer survey", "A daily checklist"], a: 0, e: "It provides a holistic view of the employee's behavior and performance." },
-            { q: "What is 'TQM'?", options: ["Total Quality Management: an organization-wide approach focused on continuously improving quality and customer satisfaction", "Time Quantity Matrix", "Total Quotation Method", "Team Quality Meeting"], a: 0, e: "TQM involves all employees in continual improvement efforts." },
-            { q: "In Supply Chain Management, what is 'Reverse Logistics' used for?", options: ["Handling customer returns, recycling, and refurbishing old products", "Shipping goods to international markets", "Speeding up the assembly line", "Paying suppliers"], a: 0, e: "It deals with the flow of goods moving backward from the customer to the manufacturer." },
-            { q: "Which Project Management tool is absolutely necessary when task durations are highly uncertain?", options: ["PERT (Program Evaluation and Review Technique)", "CPM (Critical Path Method)", "Basic Gantt Chart", "Fishbone Diagram"], a: 0, e: "PERT uses three time estimates to calculate the probability of completion under uncertainty." },
-            { q: "Ultimately, what is the goal of integrating all these tools (Agile, PERT, SCM, HR) in modern Management?", options: ["To achieve organizational objectives efficiently, effectively, and adaptably in a highly dynamic global environment", "To create unnecessary paperwork", "To replace human workers entirely with machines", "To make management confusing"], a: 0, e: "Modern management requires a multi-disciplinary approach to survive and thrive." }
-        ];
+  // TLO 4.3 - Traditional and Digital Marketing Techniques
 
+  {
+    q: "Traditional Marketing refers to:",
+    options: [
+      "Marketing using only social media platforms",
+      "Conventional forms of marketing that use offline media to promote products and services",
+      "Marketing using only email campaigns",
+      "Digital marketing strategies for online audiences"
+    ],
+    a: 1,
+    e: "Traditional Marketing: Conventional forms of marketing that use offline media to promote products and services."
+  },
+  {
+    q: "Which of the following is an example of Traditional Marketing?",
+    options: [
+      "Social media marketing",
+      "Search Engine Optimization (SEO)",
+      "Television ads, radio ads, billboards, and direct mail",
+      "Email marketing and influencer marketing"
+    ],
+    a: 2,
+    e: "Examples of Traditional Marketing include Television ads, radio ads, billboards, print advertising (newspapers, magazines), and direct mail."
+  },
+  {
+    q: "Traditional marketing primarily involves which type of communication?",
+    options: [
+      "Two-way interactive communication",
+      "One-way communication from the business to a broad audience",
+      "Real-time feedback communication",
+      "Personalized one-to-one communication"
+    ],
+    a: 1,
+    e: "One-way Communication: The business communicates a message to a broad audience, and there is usually little interaction or feedback from customers."
+  },
+  {
+    q: "Traditional marketing is often described as having which type of focus?",
+    options: [
+      "Global focus reaching worldwide audiences instantly",
+      "Local focus relying on geographic locations and physical presence",
+      "Digital focus targeting online users",
+      "Personal focus targeting individual customers"
+    ],
+    a: 1,
+    e: "Local Focus: Traditional marketing is often localized, as it relies on geographic locations and physical presence (e.g., local newspapers, TV stations)."
+  },
+  {
+    q: "Measuring the success of traditional marketing is often described as:",
+    options: [
+      "Precise and real-time",
+      "More challenging and imprecise, relying on surveys or sales reports",
+      "Fully automated and data-driven",
+      "Immediate and highly accurate"
+    ],
+    a: 1,
+    e: "Limited Tracking: Measuring the success of traditional marketing is often more challenging and imprecise, relying on surveys or sales reports."
+  },
+  {
+    q: "Amul using billboards, TV ads, print media, and radio despite the rise of digital marketing is an example of successful:",
+    options: [
+      "Digital Marketing",
+      "Social Media Marketing",
+      "Traditional Marketing",
+      "Content Marketing"
+    ],
+    a: 2,
+    e: "Amul, India's leading dairy brand, is a prime example of successful traditional marketing. Despite the rise of digital marketing, Amul continues to use billboards, TV ads, print media, and radio effectively."
+  },
+  {
+    q: "Traditional Marketing is effective for building brand awareness on a mass scale and reaching which demographics?",
+    options: [
+      "Only younger, tech-savvy audiences",
+      "Only international audiences",
+      "Older demographics who are more likely to engage with traditional media",
+      "Only B2B audiences"
+    ],
+    a: 2,
+    e: "Traditional Marketing is effective for building brand awareness on a mass scale and reaching older demographics who are more likely to engage with traditional media."
+  },
+  {
+    q: "Amul's billboards featuring the famous Amul Girl with witty taglines have been a key part of its branding for:",
+    options: [
+      "Only the last 5 years",
+      "Only the last 10 years",
+      "Decades",
+      "Only since the rise of social media"
+    ],
+    a: 2,
+    e: "Amul's billboards with its famous Amul Girl (a cartoon character) and witty taglines have been a key part of its branding for decades."
+  },
+  {
+    q: "Digital Marketing refers to:",
+    options: [
+      "Marketing using only television advertisements",
+      "Marketing products or services using digital channels like social media, search engines, email, websites, and mobile apps",
+      "Marketing using only print media",
+      "Marketing using only outdoor advertising"
+    ],
+    a: 1,
+    e: "Digital Marketing: Marketing products or services using digital channels like social media, search engines, email, websites, and mobile apps."
+  },
+  {
+    q: "Which of the following is an example of Digital Marketing?",
+    options: [
+      "Television commercials",
+      "Billboard advertising",
+      "Newspaper advertisements",
+      "Social media marketing, SEO, email marketing, and influencer marketing"
+    ],
+    a: 3,
+    e: "Examples of Digital Marketing include Social media marketing, content marketing, SEO (Search Engine Optimization), email marketing, online ads, and influencer marketing."
+  },
+  {
+    q: "Digital Marketing offers more precise targeting, lower costs, and better engagement making it ideal for reaching:",
+    options: [
+      "Only older demographics",
+      "A younger, more tech-savvy audience",
+      "Only rural audiences",
+      "Only government organizations"
+    ],
+    a: 1,
+    e: "Digital Marketing offers more precise targeting, lower costs, and better engagement, making it ideal for reaching a younger, more tech-savvy audience."
+  },
+  {
+    q: "Zomato being famous for funny and relatable posts on Instagram, Twitter, and Facebook is an example of:",
+    options: [
+      "Traditional Marketing",
+      "Print Media Marketing",
+      "Digital Marketing",
+      "Direct Mail Marketing"
+    ],
+    a: 2,
+    e: "Zomato, India's leading food delivery and restaurant discovery platform, is a great example of how digital marketing can drive business success through social media marketing."
+  },
+  {
+    q: "Which benefit of digital marketing states it is generally cheaper than traditional marketing, especially for small businesses?",
+    options: [
+      "Precise Targeting",
+      "Real-Time Analytics",
+      "Cost-Effective",
+      "Engagement and Interaction"
+    ],
+    a: 2,
+    e: "Cost-Effective: Digital marketing is generally cheaper than traditional marketing, especially for small businesses."
+  },
+  {
+    q: "Which benefit of digital marketing allows targeting based on demographics, interests, behaviors, and locations?",
+    options: [
+      "Cost-Effective",
+      "Precise Targeting",
+      "Real-Time Analytics",
+      "Engagement and Interaction"
+    ],
+    a: 1,
+    e: "Precise Targeting: Digital marketing allows targeting based on demographics, interests, behaviors, and locations."
+  },
+  {
+    q: "Which benefit of digital marketing provides detailed insights into campaign effectiveness, enabling optimization?",
+    options: [
+      "Cost-Effective",
+      "Precise Targeting",
+      "Real-Time Analytics",
+      "Engagement and Interaction"
+    ],
+    a: 2,
+    e: "Real-Time Analytics: Digital marketing provides detailed insights into campaign effectiveness, enabling optimization."
+  },
+  {
+    q: "Which benefit of digital marketing facilitates immediate feedback and interaction with customers?",
+    options: [
+      "Cost-Effective",
+      "Precise Targeting",
+      "Real-Time Analytics",
+      "Engagement and Interaction"
+    ],
+    a: 3,
+    e: "Engagement and Interaction: Digital marketing facilitates immediate feedback and interaction with customers."
+  },
+  {
+    q: "According to the material, which marketing approach often works best?",
+    options: [
+      "Only traditional marketing",
+      "Only digital marketing",
+      "A combined approach of both traditional and digital marketing",
+      "Neither traditional nor digital but only experiential marketing"
+    ],
+    a: 2,
+    e: "Combined Approach: A mix of both traditional and digital marketing often works best, depending on the business type, goals, and target audience."
+  },
+  {
+    q: "SEO in digital marketing stands for:",
+    options: [
+      "Social Engagement Operations",
+      "Search Engine Optimization",
+      "System Efficiency Output",
+      "Strategic Email Operations"
+    ],
+    a: 1,
+    e: "SEO stands for Search Engine Optimization — it is one of the examples of digital marketing techniques."
+  },
+
+  // TLO 4.4 - Event Management and Crisis Management
+
+  {
+    q: "Event Management refers to:",
+    options: [
+      "Only managing corporate conferences",
+      "The process of planning, organizing, coordinating, and executing events whether large or small",
+      "Only managing sports events",
+      "Only managing product launches"
+    ],
+    a: 1,
+    e: "Event Management refers to the process of planning, organizing, coordinating, and executing events, whether large or small."
+  },
+  {
+    q: "The first key aspect of event management involves which activity?",
+    options: [
+      "Vendor Coordination",
+      "Venue Selection",
+      "Event Planning: defining event goals, budget, timeline, and logistics",
+      "On-Site Management"
+    ],
+    a: 2,
+    e: "Event Planning: Define event goals, budget, timeline, and logistics — this is the first key aspect of event management."
+  },
+  {
+    q: "Which key aspect of event management involves choosing a location based on size, goals, accessibility, and amenities?",
+    options: [
+      "Event Planning",
+      "Venue Selection",
+      "Vendor Coordination",
+      "Logistics and Coordination"
+    ],
+    a: 1,
+    e: "Venue Selection: Choose a location based on size, goals, accessibility, and amenities."
+  },
+  {
+    q: "Which key aspect of event management involves working with caterers, decorators, and negotiating contracts?",
+    options: [
+      "Event Planning",
+      "Venue Selection",
+      "Vendor Coordination",
+      "Event Marketing and Promotion"
+    ],
+    a: 2,
+    e: "Vendor Coordination: Work with vendors (caterers, decorators, etc.), negotiate contracts, and ensure timely service."
+  },
+  {
+    q: "Promoting the event through social media, email, and ads and tracking RSVPs belongs to which aspect of event management?",
+    options: [
+      "Venue Selection",
+      "Vendor Coordination",
+      "Event Marketing and Promotion",
+      "Logistics and Coordination"
+    ],
+    a: 2,
+    e: "Event Marketing and Promotion: Promote the event through social media, email, and ads, and track sales/RSVPs."
+  },
+  {
+    q: "Managing scheduling, transportation, seating, and technical support belongs to which aspect of event management?",
+    options: [
+      "Vendor Coordination",
+      "Event Marketing and Promotion",
+      "Logistics and Coordination",
+      "On-Site Management"
+    ],
+    a: 2,
+    e: "Logistics and Coordination: Manage scheduling, transportation, seating, and technical support for the event."
+  },
+  {
+    q: "Overseeing event flow, coordinating vendors, and ensuring everything runs on schedule belongs to which aspect?",
+    options: [
+      "Event Planning",
+      "Logistics and Coordination",
+      "Post-Event Activities",
+      "On-Site Management"
+    ],
+    a: 3,
+    e: "On-Site Management: Oversee event flow, coordinate vendors, and ensure everything runs on schedule."
+  },
+  {
+    q: "Collecting feedback, analyzing success, and sending thank-you notes belongs to which aspect of event management?",
+    options: [
+      "On-Site Management",
+      "Event Marketing",
+      "Post-Event Activities",
+      "Vendor Coordination"
+    ],
+    a: 2,
+    e: "Post-Event Activities: Collect feedback, analyze success, and send follow-up communications like thank-you notes."
+  },
+  {
+    q: "How many key aspects of event management are described in the learning material?",
+    options: [
+      "5",
+      "6",
+      "7",
+      "8"
+    ],
+    a: 2,
+    e: "There are 7 key aspects of event management: Event Planning, Venue Selection, Vendor Coordination, Event Marketing and Promotion, Logistics and Coordination, On-Site Management, and Post-Event Activities."
+  },
+  {
+    q: "Conferences, seminars, product launches, meetings, and corporate retreats are examples of which type of event?",
+    options: [
+      "Social Events",
+      "Corporate Events",
+      "Sports Events",
+      "Festivals and Concerts"
+    ],
+    a: 1,
+    e: "Corporate Events: Examples include Conferences, seminars, product launches, meetings, and corporate retreats."
+  },
+  {
+    q: "Weddings, birthday parties, family reunions, and anniversaries are examples of which type of event?",
+    options: [
+      "Corporate Events",
+      "Social Events",
+      "Exhibitions and Trade Shows",
+      "Sports Events"
+    ],
+    a: 1,
+    e: "Social Events: Examples include Weddings, birthday parties, family reunions, and anniversaries."
+  },
+  {
+    q: "Industry-specific events where businesses showcase their products or services are called:",
+    options: [
+      "Corporate Events",
+      "Sports Events",
+      "Exhibitions and Trade Shows",
+      "Festivals and Concerts"
+    ],
+    a: 2,
+    e: "Exhibitions and Trade Shows: Industry-specific events where businesses showcase their products or services."
+  },
+  {
+    q: "Professional gatherings where people share knowledge, network, and learn are called:",
+    options: [
+      "Corporate Events",
+      "Social Events",
+      "Conferences and Conventions",
+      "Festivals and Concerts"
+    ],
+    a: 2,
+    e: "Conferences and Conventions: Professional gatherings where people from specific industries or professions come to share knowledge, network, and learn."
+  },
+  {
+    q: "Music festivals, cultural events, food festivals, or community celebrations are examples of:",
+    options: [
+      "Corporate Events",
+      "Exhibitions and Trade Shows",
+      "Conferences and Conventions",
+      "Festivals and Concerts"
+    ],
+    a: 3,
+    e: "Festivals and Concerts: Examples include Music festivals, cultural events, food festivals, or community celebrations."
+  },
+  {
+    q: "Marathons, tournaments, charity runs, and competitive games are examples of:",
+    options: [
+      "Corporate Events",
+      "Social Events",
+      "Sports Events",
+      "Exhibitions and Trade Shows"
+    ],
+    a: 2,
+    e: "Sports Events: Examples include Marathons, tournaments, charity runs, and competitive games."
+  },
+  {
+    q: "Which skill in event management refers to the ability to manage multiple tasks, deadlines, and responsibilities?",
+    options: [
+      "Communication Skills",
+      "Negotiation Skills",
+      "Organizational Skills",
+      "Time Management"
+    ],
+    a: 2,
+    e: "Organizational Skills: Ability to manage multiple tasks, deadlines, and responsibilities."
+  },
+  {
+    q: "To get the best deals with vendors, venues, and suppliers, which event management skill is required?",
+    options: [
+      "Time Management",
+      "Attention to Detail",
+      "Communication Skills",
+      "Negotiation Skills"
+    ],
+    a: 3,
+    e: "Negotiation Skills: To get the best deals with vendors, venues, and suppliers."
+  },
+  {
+    q: "Handling unexpected challenges during the planning or execution of an event requires which skill?",
+    options: [
+      "Budget Management",
+      "Problem-Solving Skills",
+      "Communication Skills",
+      "Organizational Skills"
+    ],
+    a: 1,
+    e: "Problem-Solving Skills: To handle unexpected challenges during the planning or execution of the event."
+  },
+  {
+    q: "Which benefit of event management states that hiring professionals allows clients to focus on other priorities?",
+    options: [
+      "Professional Planning",
+      "Memorable Experiences",
+      "Time-saving",
+      "Increased Brand Visibility"
+    ],
+    a: 2,
+    e: "Time-saving: Hiring professionals saves time and effort, allowing clients to focus on other priorities."
+  },
+  {
+    q: "Which benefit of event management creates a platform for networking and forming valuable business or personal connections?",
+    options: [
+      "Memorable Experiences",
+      "Increased Brand Visibility",
+      "Professional Planning",
+      "Networking Opportunities"
+    ],
+    a: 3,
+    e: "Networking Opportunities: Events create a platform for networking and forming valuable business or personal connections."
+  },
+  {
+    q: "Crisis management refers to the process by which an organization deals with:",
+    options: [
+      "Only financial planning challenges",
+      "Routine operational problems",
+      "Disruptive, unexpected events that threaten to harm the organization, its stakeholders, or its reputation",
+      "Only customer service issues"
+    ],
+    a: 2,
+    e: "Crisis management refers to the process by which an organization deals with disruptive, unexpected events that threaten to harm the organization, its stakeholders, or its reputation."
+  },
+  {
+    q: "The goal of crisis management is to:",
+    options: [
+      "Eliminate all future risks permanently",
+      "Minimize the impact of a crisis, restore normal operations, and protect the organization's reputation",
+      "Transfer all risks to insurance companies",
+      "Avoid all media coverage"
+    ],
+    a: 1,
+    e: "The goal of crisis management is to minimize the impact of a crisis, restore normal operations, and protect the organization's reputation."
+  },
+  {
+    q: "Nestlé India's Maggi noodles crisis in 2015 was caused by:",
+    options: [
+      "Poor marketing campaigns",
+      "Financial fraud",
+      "High levels of lead and MSG beyond permissible limits found by FSSAI",
+      "Supply chain disruptions"
+    ],
+    a: 2,
+    e: "Nestlé India's Maggi crisis occurred when it was found to contain high levels of lead and monosodium glutamate (MSG) beyond permissible limits, as per tests conducted by the FSSAI."
+  },
+  {
+    q: "In the ABCDE Model of Crisis Management, 'A' stands for:",
+    options: [
+      "Analysis",
+      "Activating event or Adversity",
+      "Assessment",
+      "Action"
+    ],
+    a: 1,
+    e: "In the ABCDE Model, 'A' stands for Activating event or Adversity."
+  },
+  {
+    q: "In the ABCDE Model of Crisis Management, 'B' stands for:",
+    options: [
+      "Budget",
+      "Benefits",
+      "Beliefs about Event or Adversity",
+      "Breakdown"
+    ],
+    a: 2,
+    e: "In the ABCDE Model, 'B' stands for Beliefs about Event or Adversity."
+  },
+  {
+    q: "In the ABCDE Model, 'C' represents:",
+    options: [
+      "Communication",
+      "The emotional Consequences",
+      "Crisis Control",
+      "Customer Concerns"
+    ],
+    a: 1,
+    e: "In the ABCDE Model, 'C' stands for the emotional Consequences."
+  },
+  {
+    q: "In the ABCDE Model, 'D' stands for:",
+    options: [
+      "Decision-Making",
+      "Damage Control",
+      "Disputations to challenge self-defeating belief",
+      "Distribution"
+    ],
+    a: 2,
+    e: "In the ABCDE Model, 'D' stands for Disputations to challenge self-defeating belief."
+  },
+  {
+    q: "In the ABCDE Model, 'E' stands for:",
+    options: [
+      "Evaluation",
+      "Effect or consequence of challenging self-defeating belief",
+      "Execution",
+      "Emergency Response"
+    ],
+    a: 1,
+    e: "In the ABCDE Model, 'E' stands for Effect or consequence of challenging self-defeating belief."
+  },
+  {
+    q: "Which step in crisis management involves identifying barriers like fear of job loss and using strategies like employee involvement and incentives?",
+    options: [
+      "Crisis Prevention and Preparedness",
+      "Crisis Identification and Response",
+      "Managing Resistance to Change",
+      "Managing the Crisis"
+    ],
+    a: 2,
+    e: "Managing Resistance to Change involves identifying barriers (fear of job loss, uncertainty) and using strategies such as employee involvement, incentives, and leadership support."
+  },
+  {
+    q: "In crisis management, which role handles public relations, media, and internal communication?",
+    options: [
+      "Crisis Manager",
+      "Legal Counsel",
+      "PR and Communication Lead",
+      "Finance Officer"
+    ],
+    a: 2,
+    e: "PR and Communication Lead: Handles public relations, media, and internal communication in a Crisis Management Team."
+  },
+  {
+    q: "Which type of crisis involves system outages, data breaches, and cyber-attacks?",
+    options: [
+      "Natural Disasters",
+      "Technological Failures",
+      "Product Failures or Recalls",
+      "Financial Crises"
+    ],
+    a: 1,
+    e: "Technological Failures: System outages, data breaches, cyber-attacks, or software failures — companies must ensure cybersecurity measures, backups, and rapid recovery plans."
+  },
+  {
+    q: "Which type of crisis involves earthquakes, floods, hurricanes, and pandemics?",
+    options: [
+      "Natural Disasters",
+      "Technological Failures",
+      "Financial Crises",
+      "Public Relations Crises"
+    ],
+    a: 0,
+    e: "Natural Disasters: Earthquakes, floods, hurricanes, wildfires, or pandemics — organizations must have emergency procedures in place for employee safety and business continuity."
+  },
+  {
+    q: "During a crisis, a spokesperson is used in crisis management to:",
+    options: [
+      "Represent the company in financial negotiations",
+      "Manage media and avoid misinformation",
+      "Handle legal proceedings",
+      "Oversee production operations"
+    ],
+    a: 1,
+    e: "Handling Media Relations: Use a spokesperson to manage media and avoid misinformation — this is part of Managing the Crisis."
+  },
+  {
+    q: "Which Pre-Crisis step involves training employees and teams through simulations?",
+    options: [
+      "Develop a crisis management plan",
+      "Identify potential risks",
+      "Conduct regular training and crisis simulation exercises",
+      "Communicate with stakeholders"
+    ],
+    a: 2,
+    e: "Pre-Crisis step: Conduct regular training and crisis simulation exercises for employees and crisis management teams."
+  },
+  {
+    q: "The Post-Crisis step of evaluating the crisis response to improve future preparedness is called:",
+    options: [
+      "Recovery",
+      "Support for Affected Parties",
+      "Crisis Analysis and Learning",
+      "Restoring Operations"
+    ],
+    a: 2,
+    e: "Crisis Analysis and Learning (Post-Crisis): Review the crisis handling to improve future responses and update plans."
+  },
+  {
+    q: "A Crisis Management Team (CMT) is responsible for:",
+    options: [
+      "Only handling financial crises",
+      "Making decisions and managing the crisis",
+      "Only managing public relations",
+      "Only ensuring employee welfare"
+    ],
+    a: 1,
+    e: "A Crisis Management Team (CMT) is a group of key personnel within an organization responsible for making decisions and managing the crisis."
+  },
+  {
+    q: "Which role in a Crisis Management Team manages logistics, resources, and operations during the crisis?",
+    options: [
+      "Crisis Manager",
+      "PR and Communication Lead",
+      "Legal Counsel",
+      "Operations and Logistics Lead"
+    ],
+    a: 3,
+    e: "Operations and Logistics Lead: Manages logistics, resources, and operations during the crisis."
+  },
+  {
+    q: "Effective crisis management can turn a potentially damaging situation into:",
+    options: [
+      "A reason to close the organization",
+      "An opportunity for growth and improvement",
+      "A permanent financial loss",
+      "A complete brand failure"
+    ],
+    a: 1,
+    e: "Effective crisis management can turn a potentially damaging situation into an opportunity for growth and improvement."
+  },
+  {
+    q: "Negative media coverage, social media backlash, or a public scandal involving leadership is an example of which type of crisis?",
+    options: [
+      "Natural Disasters",
+      "Technological Failures",
+      "Financial Crises",
+      "Public Relations Crises"
+    ],
+    a: 3,
+    e: "Public Relations Crises: Negative media coverage, social media backlash, or a public scandal involving the organization or its leadership."
+  },
+  {
+    q: "Which role in a Crisis Management Team addresses employee welfare and ensures internal morale?",
+    options: [
+      "Crisis Manager",
+      "PR and Communication Lead",
+      "Finance Officer",
+      "HR and Employee Support Lead"
+    ],
+    a: 3,
+    e: "HR and Employee Support Lead: Addresses employee welfare and ensures internal morale."
+  }
+];
         let currentIdx = 0, score = 0, answered = false;
 
         function startQuiz() {
